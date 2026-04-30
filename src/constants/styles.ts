@@ -6,7 +6,7 @@ export const COLORS = {
 
   white: "#FFFFFF",
   whiteSecondary: "#F8F8F8",
-  whiteeTrtiary: "#FFFFFF1A",
+  whiteTertiary: "#FFFFFF1A",
 
   black: "#000000",
   blackSecondary: "rgba(0, 0, 0, 0.7)",
@@ -21,6 +21,7 @@ export const COLORS = {
   textSecondary: "#6B7280",
 
   border: "#E5E7EB",
+
   error: "#EF4444",
   cancel: "#FF4242",
 
@@ -39,6 +40,8 @@ export const FONT_FAMILIES = {
   medium: "Inter_500Medium",
   semiBold: "Inter_600SemiBold",
   bold: "Inter_700Bold",
+  extraBold: "Inter_800ExtraBold",
+  black: "Inter_900Black",
 };
 
 export const FONT_SIZE = {
