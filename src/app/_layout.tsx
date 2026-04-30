@@ -1,4 +1,4 @@
-import "@/localization/i18n";
+import i18n, { i18nInitPromise } from "@/localization/i18n";
 
 import {
   Inter_300Light,
@@ -12,7 +12,7 @@ import {
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Providers from "@/components/Providers";
@@ -22,6 +22,8 @@ import { useLanguageStore } from "@/store/language.store";
 void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const [i18nReady, setI18nReady] = useState(() => i18n.isInitialized);
+
   const [fontsLoaded, error] = useFonts({
     Inter_300Light,
     Inter_400Regular,
@@ -36,12 +38,18 @@ export default function RootLayout() {
   const languageHydrated = useLanguageStore((s) => s.isHydrated);
 
   useEffect(() => {
-    if ((fontsLoaded || error) && authHydrated && languageHydrated) {
+    void i18nInitPromise.then(() => {
+      setI18nReady(true);
+    });
+  }, []);
+
+  useEffect(() => {
+    if ((fontsLoaded || error) && authHydrated && languageHydrated && i18nReady) {
       void SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, error, authHydrated, languageHydrated]);
+  }, [fontsLoaded, error, authHydrated, languageHydrated, i18nReady]);
 
-  if (!fontsLoaded || !authHydrated || !languageHydrated) {
+  if (!fontsLoaded || !authHydrated || !languageHydrated || !i18nReady) {
     return null;
   }
 

@@ -24,6 +24,8 @@ type UiLiveSemiGaugeProps = {
    * @default 220
    */
   size?: number;
+  /** Filled arc stroke; defaults to pickup/intelligence orange. */
+  strokeColor?: string;
 };
 
 export function UiLiveSemiGauge({
@@ -32,6 +34,7 @@ export function UiLiveSemiGauge({
   centerMainSuffix,
   centerSub,
   size = DEFAULT_SIZE,
+  strokeColor = COLORS.neonOrange,
 }: UiLiveSemiGaugeProps) {
   const clamped = Math.min(100, Math.max(0, percent));
   const dashOffset = ARC_LENGTH * (1 - clamped / 100);
@@ -58,7 +61,7 @@ export function UiLiveSemiGauge({
         />
         <Path
           d={ARC_PATH}
-          stroke={COLORS.neonOrange}
+          stroke={strokeColor}
           strokeWidth={9}
           strokeLinecap="round"
           fill="none"

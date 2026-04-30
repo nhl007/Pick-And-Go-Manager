@@ -4,7 +4,16 @@ import { I18nextProvider } from "react-i18next";
 
 import { queryClient } from "@/lib/queryClient";
 import i18n, { getDeviceLanguage } from "@/localization/i18n";
-import { DEFAULT_LANGUAGE, isSupportedLanguage } from "@/localization/resources";
+import {
+  DEFAULT_LANGUAGE,
+  isSupportedLanguage,
+  type SupportedLanguage,
+} from "@/localization/resources";
+
+function normalizeSupportedLanguage(raw: string): SupportedLanguage {
+  const base = raw.split("-")[0]?.toLowerCase() ?? "";
+  return isSupportedLanguage(base) ? base : DEFAULT_LANGUAGE;
+}
 import { useLanguageStore } from "@/store/language.store";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
