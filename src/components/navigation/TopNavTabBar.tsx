@@ -4,7 +4,7 @@ import type { NavigationState } from "@react-navigation/native";
 import { router } from "expo-router";
 import React, { memo, useCallback, useMemo } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import Animated, { FadeIn, FadeOut, Layout } from "react-native-reanimated";
+import Animated, { FadeIn, FadeOut, LinearTransition } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { COLORS, FONT_FAMILIES } from "@/constants/styles";
@@ -35,12 +35,15 @@ const NAV_TABS: TabDef[] = [
   { routeName: "settings", label: "Settings", icon: "settings-outline" },
 ];
 
-const TOP_NAV_MIN_HEIGHT = 85;
+const TOP_NAV_MIN_HEIGHT = 80;
 const HIT_SLOP = 6;
 const LABEL_FADE_IN_MS = 180;
 const LABEL_FADE_OUT_MS = 120;
 
-const pillLayoutTransition = Layout.springify().damping(18).stiffness(220).mass(0.6);
+const pillLayoutTransition = LinearTransition.springify()
+  .damping(18)
+  .stiffness(220)
+  .mass(0.6);
 
 function buildRoutesByName(routes: NavigationState["routes"]) {
   const map = new Map<string, (typeof routes)[number]>();
@@ -285,6 +288,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     borderBottomWidth: 1,
+    backgroundColor: COLORS.surfaceCanvas,
     borderColor: COLORS.tabBarIconInactive,
   },
   outerShell: {
