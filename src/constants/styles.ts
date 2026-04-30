@@ -6,7 +6,7 @@ export const COLORS = {
 
   white: "#FFFFFF",
   whiteSecondary: "#F8F8F8",
-  whiteeTrtiary: "#FFFFFF1A",
+  whiteTertiary: "#FFFFFF1A",
 
   black: "#000000",
   blackSecondary: "rgba(0, 0, 0, 0.7)",
@@ -21,6 +21,24 @@ export const COLORS = {
   textSecondary: "#6B7280",
 
   border: "#E5E7EB",
+
+  surfaceCanvas: "#EBEBEB",
+  portalInk: "#0A0A0A",
+  ink2: "#444444",
+  ink3: "#666666",
+  ink4: "#888888",
+  ink5: "#999999",
+  hairline: "rgba(0,0,0,0.08)",
+  accentAmber: "#EF9F27",
+  trendPositive: "#FFC700",
+  trendPositiveDeep: "#8B6F00",
+  neonOrange: "#FF8A00",
+  neonYellow: "#FFE500",
+  chartWarm: "#FFB05E",
+  chartSand: "#E5C6A8",
+  chartSilver: "#CFCFCF",
+  chartMist: "#E0E0E0",
+
   error: "#EF4444",
   cancel: "#FF4242",
 
@@ -43,6 +61,8 @@ export const FONT_FAMILIES = {
   medium: "Inter_500Medium",
   semiBold: "Inter_600SemiBold",
   bold: "Inter_700Bold",
+  extraBold: "Inter_800ExtraBold",
+  black: "Inter_900Black",
 };
 
 export const FONT_SIZE = {

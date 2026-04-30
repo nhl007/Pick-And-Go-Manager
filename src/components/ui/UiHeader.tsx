@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Image, ImageSourcePropType,StyleSheet, View } from "react-native";
+import { Image, ImageSourcePropType, StyleSheet, View } from "react-native";
 
 import { UiButton, UiButtonProps } from "./UiButton";
 import { UiText } from "./UiText";
@@ -26,8 +26,10 @@ export default function UiHeader({
         height={48}
         radius="full"
         {...leftActionProps}
-        onPress={() => { router.back(); }} 
-        backgroundColor="whiteeTrtiary" 
+        onPress={() => {
+          router.back();
+        }}
+        backgroundColor="whiteTertiary"
       >
         <Image source={require("@/assets/icons/arrow-left.png")} style={styles.icon} />
       </UiButton>
