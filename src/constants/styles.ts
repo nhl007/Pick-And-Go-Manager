@@ -22,6 +22,23 @@ export const COLORS = {
 
   border: "#E5E7EB",
 
+  surfaceCanvas: "#EBEBEB",
+  portalInk: "#0A0A0A",
+  ink2: "#444444",
+  ink3: "#666666",
+  ink4: "#888888",
+  ink5: "#999999",
+  hairline: "rgba(0,0,0,0.08)",
+  accentAmber: "#EF9F27",
+  trendPositive: "#FFC700",
+  trendPositiveDeep: "#8B6F00",
+  neonOrange: "#FF8A00",
+  neonYellow: "#FFE500",
+  chartWarm: "#FFB05E",
+  chartSand: "#E5C6A8",
+  chartSilver: "#CFCFCF",
+  chartMist: "#E0E0E0",
+
   error: "#EF4444",
   cancel: "#FF4242",
 
