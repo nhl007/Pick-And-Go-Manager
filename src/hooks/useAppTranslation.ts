@@ -1,6 +1,7 @@
+import "@/localization/i18n";
+
 import { useTranslation } from "react-i18next";
 
-import "@/localization/i18n";
 import { useLanguageStore } from "@/store/language.store";
 
 export function useAppTranslation() {
