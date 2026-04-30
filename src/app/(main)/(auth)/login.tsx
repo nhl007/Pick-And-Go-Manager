@@ -40,19 +40,20 @@ export default function LoginScreen() {
   const handleLogin = () => {
     if (!emailOrPhone.trim() || !password.trim()) {
       return;
-    }
+    } 
+    router.replace(EXPLORE_TAB_HREF);
 
-    login(
-      {
-        email: emailOrPhone.trim(),
-        password: password.trim(),
-      },
-      {
-        onSuccess: () => {
-          router.replace(EXPLORE_TAB_HREF);
-        },
-      },
-    );
+    // login(
+    //   {
+    //     email: emailOrPhone.trim(),
+    //     password: password.trim(),
+    //   },
+    //   {
+    //     onSuccess: () => {
+    //       router.replace(EXPLORE_TAB_HREF);
+    //     },
+    //   },
+    // );
   };
 
   return (

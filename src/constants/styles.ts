@@ -31,6 +31,10 @@ export const COLORS = {
   tabBarLabelInactive: "#FFFFFF",
   tabBarLabelActive: "#000000",
   tabBarShadow: "rgba(0, 0, 0, 0.12)",
+
+  financeAccent: "#CA8A04",
+  financeOrange: "#EA580C",
+  financeRose: "#F43F5E",
 };
 
 export const FONT_FAMILIES = {
