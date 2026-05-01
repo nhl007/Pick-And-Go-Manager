@@ -4,6 +4,10 @@ import { I18nManager, Pressable, ScrollView, Text, useWindowDimensions, View } f
 
 import { AddTeamMemberModal } from "@/components/staff/AddTeamMemberModal";
 import { AllStaffModal } from "@/components/staff/AllMember";
+import { AllTeamMembersModal, type TeamMember } from "@/components/staff/AllTeamMembersModal";
+import { EditProfileModal } from "@/components/staff/EditProfileModal";
+import { EmployeeDetailModal } from "@/components/staff/EmployeeDetailModal";
+import { TaskOrchestrationSection } from "@/components/staff/TaskOrchestrationSection";
 import { UiLiveBlinkDot } from "@/components/ui/UiLiveBlinkDot";
 import { UiText } from "@/components/ui/UiText";
 import { staffStyles as styles } from "@/constants/staff";
@@ -25,7 +29,11 @@ export default function StaffAndPrivilegesScreen() {
   const now = useNowTicker();
   const { width } = useWindowDimensions();
   const [allStaffVisible, setAllStaffVisible] = useState(false);
+  const [teamDirectoryVisible, setTeamDirectoryVisible] = useState(false);
   const [addMemberVisible, setAddMemberVisible] = useState(false);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [memberDetailVisible, setMemberDetailVisible] = useState(false);
+  const [editProfileVisible, setEditProfileVisible] = useState(false);
 
   const isRtl = useMemo(
     () => i18n.language === "ar" || I18nManager.isRTL,
@@ -55,9 +63,27 @@ export default function StaffAndPrivilegesScreen() {
   const clockedInitials = ["RA", "AK", "LM", "OM"];
 
   const openAllStaff = () => setAllStaffVisible(true);
+  const openTeamDirectory = () => setTeamDirectoryVisible(true);
   const openAddMember = () => {
     setAllStaffVisible(false);
     setAddMemberVisible(true);
+  };
+  const handleMemberPress = (member: TeamMember) => {
+    setSelectedMember(member);
+    setTeamDirectoryVisible(false);
+    setMemberDetailVisible(true);
+  };
+  const handleDetailClose = () => {
+    setMemberDetailVisible(false);
+    setTimeout(() => setSelectedMember(null), 250);
+  };
+  const handleEditProfile = () => {
+    setMemberDetailVisible(false);
+    setEditProfileVisible(true);
+  };
+  const handleEditClose = () => {
+    setEditProfileVisible(false);
+    setTimeout(() => setSelectedMember(null), 250);
   };
 
   return (
@@ -280,44 +306,50 @@ export default function StaffAndPrivilegesScreen() {
               <UiText style={styles.dirBrowseTitle}>{t("staff.browseMembersTitle")}</UiText>
               <UiText style={styles.dirBrowseDesc}>{t("staff.browseMembersDesc")}</UiText>
             </View>
-            <View style={styles.dirRightCol}>
-              <View style={[styles.roleIconsRow, isRtl && styles.rowRtl]}>
-                <Ionicons name="restaurant-outline" size={20} color={COLORS.ink3} />
-                <Ionicons name="bicycle-outline" size={20} color={COLORS.ink3} />
-                <Ionicons name="cafe-outline" size={20} color={COLORS.ink3} />
-                <Ionicons name="card-outline" size={20} color={COLORS.ink3} />
-                <View style={styles.plusBadge}>
-                  <UiText style={styles.plusBadgeTxt}>
-                    {t("staff.roleMore", { count: 14 })}
-                  </UiText>
-                </View>
+            <View style={[styles.roleIconsRow, isRtl && styles.rowRtl]}>
+              <View style={styles.roleIconCircle}>
+                <Ionicons name="restaurant-outline" size={14} color={COLORS.portalInk} />
               </View>
-              <View style={[styles.metricColumns, isRtl && styles.rowRtl]}>
-                <View style={styles.metricCol}>
-                  <UiText style={styles.metricValue}>{String(TEAM.registered)}</UiText>
-                  <UiText style={styles.metricLbl}>{t("staff.metricMembers")}</UiText>
-                </View>
-                <View style={styles.metricCol}>
-                  <UiText style={styles.metricValue}>{String(TEAM.roles)}</UiText>
-                  <UiText style={styles.metricLbl}>{t("staff.metricRoles")}</UiText>
-                </View>
-                <View style={styles.metricCol}>
-                  <UiText style={styles.metricValue}>{TEAM.avgRating}</UiText>
-                  <UiText style={styles.metricLbl}>{t("staff.metricAvgRating")}</UiText>
-                </View>
-                <View style={styles.metricCol}>
-                  <UiText style={styles.metricValue}>{TEAM.attendance}</UiText>
-                  <UiText style={styles.metricLbl}>{t("staff.metricAttendance")}</UiText>
-                </View>
+              <View style={styles.roleIconCircle}>
+                <Ionicons name="bicycle-outline" size={14} color={COLORS.portalInk} />
+              </View>
+              <View style={styles.roleIconCircle}>
+                <Ionicons name="cafe-outline" size={14} color={COLORS.portalInk} />
+              </View>
+              <View style={styles.roleIconCircle}>
+                <Ionicons name="card-outline" size={14} color={COLORS.portalInk} />
+              </View>
+              <View style={styles.plusBadge}>
+                <UiText style={styles.plusBadgeTxt}>
+                  {t("staff.roleMore", { count: 14 })}
+                </UiText>
               </View>
             </View>
-          </View>
-          <View style={[styles.dirFooterRow, isRtl && styles.rowRtl]}>
-            <Pressable onPress={openAllStaff} hitSlop={8}>
+            <View style={[styles.metricColumns, isRtl && styles.rowRtl]}>
+              <View style={styles.metricCol}>
+                <UiText style={styles.metricValue}>{String(TEAM.registered)}</UiText>
+                <UiText style={styles.metricLbl}>{t("staff.metricMembers")}</UiText>
+              </View>
+              <View style={styles.metricCol}>
+                <UiText style={styles.metricValue}>{String(TEAM.roles)}</UiText>
+                <UiText style={styles.metricLbl}>{t("staff.metricRoles")}</UiText>
+              </View>
+              <View style={styles.metricCol}>
+                <UiText style={styles.metricValue}>{TEAM.avgRating}</UiText>
+                <UiText style={styles.metricLbl}>{t("staff.metricAvgRating")}</UiText>
+              </View>
+              <View style={styles.metricCol}>
+                <UiText style={styles.metricValue}>{TEAM.attendance}</UiText>
+                <UiText style={styles.metricLbl}>{t("staff.metricAttendance")}</UiText>
+              </View>
+            </View>
+            <Pressable onPress={openTeamDirectory} hitSlop={8} style={styles.dirSeeAllInline}>
               <UiText style={styles.linkBold}>{t("staff.seeAllMembers")} →</UiText>
             </Pressable>
           </View>
         </View>
+
+        <TaskOrchestrationSection t={t} isRtl={isRtl} />
 
         <View style={{ height: SPACING.xxl }} />
       </ScrollView>
@@ -326,6 +358,25 @@ export default function StaffAndPrivilegesScreen() {
         visible={allStaffVisible}
         onClose={() => setAllStaffVisible(false)}
         onPressAddMember={openAddMember}
+        t={t}
+      />
+      <AllTeamMembersModal
+        visible={teamDirectoryVisible}
+        onClose={() => setTeamDirectoryVisible(false)}
+        onPressMember={handleMemberPress}
+        t={t}
+      />
+      <EmployeeDetailModal
+        visible={memberDetailVisible}
+        onClose={handleDetailClose}
+        member={selectedMember}
+        onEditProfile={handleEditProfile}
+        t={t}
+      />
+      <EditProfileModal
+        visible={editProfileVisible}
+        onClose={handleEditClose}
+        member={selectedMember}
         t={t}
       />
       <AddTeamMemberModal

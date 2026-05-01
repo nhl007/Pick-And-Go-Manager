@@ -1,0 +1,198 @@
+import { StyleSheet } from "react-native";
+
+import { COLORS, RADIUS, SPACING } from "@/constants/styles";
+
+export const prepStationCardStyles = StyleSheet.create({
+  card: {
+    flex: 1,
+    minWidth: 0,
+    backgroundColor: COLORS.white,
+    borderRadius: RADIUS.lg,
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+    shadowColor: "#000000",
+    shadowOpacity: 0.05,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 2,
+  },
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: SPACING.sm,
+    marginBottom: SPACING.md,
+  },
+  headerTitle: {
+    fontFamily: "Inter_800ExtraBold",
+    fontSize: 12,
+    letterSpacing: 1.4,
+    textTransform: "uppercase",
+    color: COLORS.portalInk,
+    flexShrink: 1,
+  },
+  peakBadge: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 4,
+    borderRadius: RADIUS.full,
+    backgroundColor: "rgba(255, 229, 0, 0.35)",
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: "rgba(239, 159, 39, 0.35)",
+  },
+  peakBadgeTxt: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 10,
+    color: COLORS.trendPositiveDeep,
+  },
+  stationItem: {
+    backgroundColor: COLORS.whiteSecondary,
+    borderRadius: RADIUS.md,
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+    marginBottom: SPACING.sm,
+    gap: SPACING.sm,
+  },
+  stationItemUnassigned: {
+    borderColor: "rgba(239, 159, 39, 0.45)",
+    borderStartWidth: 3,
+    borderStartColor: COLORS.neonOrange,
+  },
+  stationTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: SPACING.sm,
+  },
+  stationLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: SPACING.sm,
+    flexShrink: 1,
+    flex: 1,
+    minWidth: 0,
+  },
+  stationIconWrap: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: COLORS.white,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+  },
+  stationName: {
+    fontFamily: "Inter_800ExtraBold",
+    fontSize: 13,
+    color: COLORS.portalInk,
+    flexShrink: 1,
+  },
+  workloadBadge: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 3,
+    borderRadius: RADIUS.full,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  workloadBadgeTxt: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 9,
+    letterSpacing: 0.6,
+  },
+  workloadHeavy: {
+    backgroundColor: "rgba(244, 63, 94, 0.10)",
+    borderColor: "rgba(244, 63, 94, 0.30)",
+  },
+  workloadHeavyTxt: {
+    color: COLORS.financeRose,
+  },
+  workloadMedium: {
+    backgroundColor: "rgba(255, 229, 0, 0.30)",
+    borderColor: "rgba(239, 159, 39, 0.35)",
+  },
+  workloadMediumTxt: {
+    color: COLORS.trendPositiveDeep,
+  },
+  workloadLight: {
+    backgroundColor: "rgba(34, 197, 94, 0.10)",
+    borderColor: "rgba(34, 197, 94, 0.30)",
+  },
+  workloadLightTxt: {
+    color: "#15803D",
+  },
+  workloadUnassigned: {
+    backgroundColor: "rgba(239, 159, 39, 0.12)",
+    borderColor: "rgba(239, 159, 39, 0.35)",
+  },
+  workloadUnassignedTxt: {
+    color: COLORS.neonOrange,
+  },
+  assigneeRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: SPACING.sm,
+  },
+  assigneeLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: SPACING.sm,
+    flexShrink: 1,
+    flex: 1,
+    minWidth: 0,
+  },
+  avatarPill: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    backgroundColor: "rgba(0,0,0,0.06)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  avatarPillUnassigned: {
+    backgroundColor: COLORS.white,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+    borderStyle: "dashed",
+  },
+  avatarTxt: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 9,
+    color: COLORS.ink2,
+  },
+  assigneeNameWrap: {
+    flexShrink: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    minWidth: 0,
+  },
+  assigneeName: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 12,
+    color: COLORS.portalInk,
+    flexShrink: 1,
+  },
+  assigneeMetaSep: {
+    fontFamily: "Inter_600SemiBold",
+    fontSize: 10,
+    color: COLORS.ink4,
+  },
+  assigneeMeta: {
+    fontFamily: "Inter_600SemiBold",
+    fontSize: 10,
+    color: COLORS.ink4,
+    flexShrink: 1,
+  },
+  assigneeMetaStar: {
+    color: COLORS.neonOrange,
+  },
+  assignCta: {
+    fontFamily: "Inter_800ExtraBold",
+    fontSize: 12,
+    color: COLORS.neonOrange,
+  },
+});
