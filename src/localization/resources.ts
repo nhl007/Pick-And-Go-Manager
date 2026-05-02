@@ -1,3 +1,5 @@
+import { CONTROL_AR, CONTROL_EN } from "./control.translations";
+
 export const SUPPORTED_LANGUAGES = ["en", "ar"] as const;
 
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
@@ -168,6 +170,7 @@ export const resources = {
         peakHeroMetaPrefix: "next peak · ",
         peakHeroMetaHighlight: "+38%",
       },
+      control: CONTROL_EN,
       financePage: {
         heroBalance: "{{currency}} 47,283",
         availableBalancePrefix: "Available balance · ",
@@ -513,6 +516,7 @@ export const resources = {
         peakHeroMetaPrefix: "الذروة التالية · ",
         peakHeroMetaHighlight: "+38%",
       },
+      control: CONTROL_AR,
       financePage: {
         heroBalance: "{{currency}} 47,283",
         availableBalancePrefix: "الرصيد المتاح · ",
