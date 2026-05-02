@@ -1,5 +1,3 @@
-import i18n, { i18nInitPromise } from "@/localization/i18n";
-
 import {
   Inter_300Light,
   Inter_400Regular,
@@ -16,6 +14,7 @@ import { useEffect, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Providers from "@/components/Providers";
+import i18n, { i18nInitPromise } from "@/localization/i18n";
 import { useAuthStore } from "@/store/auth.store";
 import { useLanguageStore } from "@/store/language.store";
 
