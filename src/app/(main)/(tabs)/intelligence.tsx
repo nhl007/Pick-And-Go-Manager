@@ -2,6 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useMemo } from "react";
 import { I18nManager, ScrollView, Text, useWindowDimensions, View } from "react-native";
 
+import Hero from "@/components/Hero";
 import { UiDirhamSymbol } from "@/components/ui/UiDirhamSymbol";
 import { UiLiveBlinkDot } from "@/components/ui/UiLiveBlinkDot";
 import { UiLiveHBarChart } from "@/components/ui/UiLiveHBarChart";
@@ -11,15 +12,12 @@ import { UiLivePrepFunnel } from "@/components/ui/UiLivePrepFunnel";
 import { UiLiveRingGauge } from "@/components/ui/UiLiveRingGauge";
 import { UiLiveSemiGauge } from "@/components/ui/UiLiveSemiGauge";
 import { UiText } from "@/components/ui/UiText";
+import { styles } from "@/constants/intelligence.styles";
 import { COLORS, SPACING } from "@/constants/styles";
 import { useAppTranslation } from "@/hooks/useAppTranslation";
-import { useNowTicker } from "@/hooks/useNowTicker";
-
-import { styles } from "./intelligence.styles";
 
 export default function LiveIntelligenceScreen() {
   const { t, i18n } = useAppTranslation();
-  const now = useNowTicker();
   const { width } = useWindowDimensions();
 
   const isRtl = useMemo(
@@ -28,24 +26,6 @@ export default function LiveIntelligenceScreen() {
   );
 
   const horizontalPad = Math.min(30, Math.max(SPACING.md, width * 0.02));
-
-  const timeLine = useMemo(() => {
-    return now.toLocaleTimeString(i18n.language === "ar" ? "ar-AE" : "en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: false,
-    });
-  }, [i18n.language, now]);
-
-  const dateLine = useMemo(() => {
-    return now.toLocaleDateString(i18n.language === "ar" ? "ar-AE" : "en-GB", {
-      weekday: "short",
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    });
-  }, [i18n.language, now]);
 
   const funnelStages = useMemo(
     () => [
@@ -93,26 +73,26 @@ export default function LiveIntelligenceScreen() {
       contentContainerStyle={[styles.scrollContent, { paddingHorizontal: horizontalPad }]}
       showsVerticalScrollIndicator={false}
     >
-      <View style={styles.heroDisplay}>
-        <View style={[styles.heroAmountRow, isRtl && styles.rowRtl]}>
-          <View style={styles.heroCurrency}>
-            <UiDirhamSymbol size={48} color={COLORS.portalInk} />
-          </View>
-          <UiText style={styles.heroNumber} numberOfLines={1} adjustsFontSizeToFit>
-            {t("intelligence.heroProjected")}
-          </UiText>
-        </View>
-      </View>
-
-      <View style={[styles.meta, isRtl && styles.rowRtl]}>
-        <View style={styles.metaLeft}>
-          <View style={styles.brandStack}>
-            <UiText style={styles.brandName}>{t("intelligence.brandName")}</UiText>
-            <UiText style={styles.brandBranch}>{t("intelligence.brandBranch")}</UiText>
-          </View>
-        </View>
-
+      <Hero
+        locale={i18n.language === "ar" ? "ar-AE" : "en-GB"}
+        brandBranch={t("intelligence.brandBranch")}
+        brandName={t("intelligence.brandName")}
+        title={t("intelligence.titleLine1")}
+        titleStrong={t("intelligence.titleStrong")}
+        subtitle={t("intelligence.subtitle")}
+        isRtl={isRtl}
+      >
         <View style={styles.metaMid}>
+          <View style={styles.heroDisplay}>
+            <View style={[styles.heroAmountRow, isRtl && styles.rowRtl]}>
+              <View style={styles.heroCurrency}>
+                <UiDirhamSymbol size={48} color={COLORS.portalInk} />
+              </View>
+              <UiText style={styles.heroNumber} numberOfLines={1} adjustsFontSizeToFit>
+                {t("intelligence.heroProjected")}
+              </UiText>
+            </View>
+          </View>
           <View style={[styles.metaMidRow, isRtl && styles.rowRtl]}>
             <Ionicons name="time-outline" size={14} color={COLORS.accentAmber} />
             <Text style={styles.metaMidText}>
@@ -129,22 +109,7 @@ export default function LiveIntelligenceScreen() {
             </UiText>
           </View>
         </View>
-
-        <View style={[styles.metaRight, isRtl && styles.metaRightRtl]}>
-          <UiText style={styles.metaTime}>{timeLine}</UiText>
-          <UiText style={styles.metaDate}>{dateLine}</UiText>
-        </View>
-      </View>
-
-      <View style={styles.divider} />
-
-      <View style={[styles.pgHead, isRtl && styles.rowRtl]}>
-        <View style={styles.pgHeadTitle}>
-          <UiText style={styles.h1Light}>{t("intelligence.titleLine1")}</UiText>
-          <UiText style={styles.h1Strong}>{t("intelligence.titleStrong")}</UiText>
-        </View>
-        <UiText style={styles.tag}>{t("intelligence.subtitle")}</UiText>
-      </View>
+      </Hero>
 
       <View style={[styles.sectionHeadRow, isRtl && styles.rowRtl]}>
         <UiText style={styles.sectionTitle}>{t("intelligence.operationsTitle")}</UiText>
