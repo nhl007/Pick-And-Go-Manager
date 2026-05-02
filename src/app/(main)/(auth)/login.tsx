@@ -19,7 +19,7 @@ import UICheckBox from "@/components/ui/UICheckBox";
 import UiInput from "@/components/ui/UiInput";
 import { UiSpacer } from "@/components/ui/UiSpacer";
 import { UiText } from "@/components/ui/UiText";
-import { EXPLORE_TAB_HREF, FORGET_PASSWORD_HREF } from "@/constants/routes";
+import { FORGET_PASSWORD_HREF, TAB_INDEX_HREF } from "@/constants/routes";
 import { COLORS, FONT_FAMILIES, FONT_SIZE, RADIUS, SPACING } from "@/constants/styles";
 import { useAppTranslation } from "@/hooks/useAppTranslation";
 import { useLogin } from "@/hooks/useLogin";
@@ -40,8 +40,8 @@ export default function LoginScreen() {
   const handleLogin = () => {
     if (!emailOrPhone.trim() || !password.trim()) {
       return;
-    } 
-    router.replace(EXPLORE_TAB_HREF);
+    }
+    router.replace(TAB_INDEX_HREF);
 
     // login(
     //   {
@@ -50,7 +50,7 @@ export default function LoginScreen() {
     //   },
     //   {
     //     onSuccess: () => {
-    //       router.replace(EXPLORE_TAB_HREF);
+    //       router.replace(TAB_INDEX_HREF);
     //     },
     //   },
     // );
