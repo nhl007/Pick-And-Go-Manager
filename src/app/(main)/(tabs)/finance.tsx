@@ -106,10 +106,8 @@ export default function FinanceScreen() {
   );
 
   const payoutDeadlineMs = useRef<number | null>(null);
-  if (payoutDeadlineMs.current === null) {
-    payoutDeadlineMs.current =
-      Date.now() + 5 * MS_DAY + 13 * MS_HOUR + 23 * MS_MIN + 18 * MS_SEC;
-  }
+  payoutDeadlineMs.current ??=
+    Date.now() + 5 * MS_DAY + 13 * MS_HOUR + 23 * MS_MIN + 18 * MS_SEC;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -142,11 +140,7 @@ export default function FinanceScreen() {
       `${pad(s)}${t("financePage.unitSecondShort")}`;
     const deadline =
       payoutDeadlineMs.current ??
-      now.getTime() +
-        5 * MS_DAY +
-        13 * MS_HOUR +
-        23 * MS_MIN +
-        18 * MS_SEC;
+      now.getTime() + 5 * MS_DAY + 13 * MS_HOUR + 23 * MS_MIN + 18 * MS_SEC;
     const dateStr = new Date(deadline).toLocaleDateString(
       i18n.language === "ar" ? "ar-AE" : "en-GB",
       { weekday: "short", month: "short", day: "numeric" },
@@ -192,35 +186,36 @@ export default function FinanceScreen() {
         <View style={[styles.meta, isRtl && styles.rowRtl]}>
           <View style={styles.metaLeft}>
             <View style={styles.brandStack}>
-              <UiText style={styles.brandName}>
-                {t("intelligence.brandName")}
-              </UiText>
-              <UiText style={styles.brandBranch}>
-                {t("intelligence.brandBranch")}
-              </UiText>
+              <UiText style={styles.brandName}>{t("intelligence.brandName")}</UiText>
+              <UiText style={styles.brandBranch}>{t("intelligence.brandBranch")}</UiText>
             </View>
           </View>
 
           <View style={styles.metaMid}>
             <View style={[styles.metaMidRow, isRtl && styles.rowRtl]}>
-              <Ionicons name="information-circle-outline" size={14} color={COLORS.accentAmber} />
+              <Ionicons
+                name="information-circle-outline"
+                size={14}
+                color={COLORS.accentAmber}
+              />
               <UiText style={styles.metaMidText}>
                 {t("financePage.availableBalancePrefix")}
-                <UiText style={styles.metaMidStrong}>
-                  {" +Ð8,427 today"}
-                </UiText>
+                <UiText style={styles.metaMidStrong}>{" +Ð8,427 today"}</UiText>
               </UiText>
             </View>
             <View style={styles.metaMidRow}>
-              <UiText style={styles.metaMidSmall}>
-                {payoutGauge.nextPayoutMeta}
-              </UiText>
+              <UiText style={styles.metaMidSmall}>{payoutGauge.nextPayoutMeta}</UiText>
             </View>
           </View>
 
           <View style={[styles.metaRight, isRtl && styles.metaRightRtl]}>
-            <UiText style={styles.metaTime}>{clockLabel.split(" ")[0]}:{clockLabel.split(" ")[1]}:{clockLabel.split(" ")[2]}</UiText>
-            <UiText style={styles.metaDate}>{clockLabel.split(" ").slice(3).join(" ")}</UiText>
+            <UiText style={styles.metaTime}>
+              {clockLabel.split(" ")[0]}:{clockLabel.split(" ")[1]}:
+              {clockLabel.split(" ")[2]}
+            </UiText>
+            <UiText style={styles.metaDate}>
+              {clockLabel.split(" ").slice(3).join(" ")}
+            </UiText>
           </View>
         </View>
 
@@ -231,7 +226,10 @@ export default function FinanceScreen() {
             <UiText style={styles.h1Light}>Finance &</UiText>
             <UiText style={styles.h1Strong}>payouts.</UiText>
           </View>
-          <UiText style={styles.tag}>Revenue streams, settlement cycles, and cash-flow visibility. Every transaction tracked · every payout reconciled.</UiText>
+          <UiText style={styles.tag}>
+            Revenue streams, settlement cycles, and cash-flow visibility. Every
+            transaction tracked · every payout reconciled.
+          </UiText>
         </View>
 
         <View style={[styles.statsRow, isRtl && styles.rowRtl]}>
@@ -279,7 +277,13 @@ export default function FinanceScreen() {
 
         <View style={[styles.mainRow, isRtl && styles.rowRtl]}>
           <View style={styles.transactionsCard}>
-            <View style={[styles.transactionsHeader, styles.transactionsHeaderSpacing, isRtl && styles.rowRtl]}>
+            <View
+              style={[
+                styles.transactionsHeader,
+                styles.transactionsHeaderSpacing,
+                isRtl && styles.rowRtl,
+              ]}
+            >
               <UiText size="base" font="bold" align="left" style={styles.sectionLabel}>
                 {t("financePage.recentTransactions")}
               </UiText>
@@ -573,7 +577,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.border,
   },
-  
+
   txRow: {
     flexDirection: "row",
     alignItems: "center",
