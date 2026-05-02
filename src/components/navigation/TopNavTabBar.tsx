@@ -288,7 +288,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     borderBottomWidth: 1,
-    backgroundColor: COLORS.surfaceCanvas,
     borderColor: COLORS.tabBarIconInactive,
   },
   outerShell: {
