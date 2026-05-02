@@ -1,6 +1,15 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useState } from "react";
-import { Modal, Pressable, ScrollView, StyleSheet,View } from "react-native";
+import {
+  Modal,
+  Pressable,
+  ScrollView,
+  StyleProp,
+  StyleSheet,
+  TextStyle,
+  View,
+  ViewStyle,
+} from "react-native";
 
 import { UiText } from "@/components/ui/UiText";
 import { COLORS, RADIUS, SPACING } from "@/constants/styles";
@@ -16,8 +25,10 @@ type UiSelectProps = {
   onValueChange: (value: string) => void;
   placeholder?: string;
   label?: string;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
   disabled?: boolean;
+  fontSize?: number;
+  labelStyle?: StyleProp<TextStyle>;
 };
 
 export function UiSelect({
@@ -28,30 +39,36 @@ export function UiSelect({
   label,
   style,
   disabled = false,
+  fontSize = 14,
+  labelStyle,
 }: UiSelectProps) {
   const [visible, setVisible] = useState(false);
-  const selectedLabel =
-    options.find((opt) => opt.value === value)?.label || placeholder;
+  const selectedLabel = options.find((opt) => opt.value === value)?.label ?? placeholder;
 
   return (
     <>
       {label && (
         <UiText
-          style={{
-            fontFamily: "Inter_800ExtraBold",
-            fontSize: 10,
-            letterSpacing: 0.8,
-            color: COLORS.ink2,
-            marginBottom: 6,
-            textTransform: "uppercase",
-          }}
+          style={[
+            {
+              fontFamily: "Inter_800ExtraBold",
+              fontSize: 10,
+              letterSpacing: 0.8,
+              color: COLORS.ink2,
+              marginBottom: 6,
+              textTransform: "uppercase",
+            },
+            labelStyle,
+          ]}
         >
           {label}
         </UiText>
       )}
 
       <Pressable
-        onPress={() => !disabled && setVisible(true)}
+        onPress={() => {
+          !disabled && setVisible(true);
+        }}
         disabled={disabled}
         style={[
           {
@@ -72,7 +89,7 @@ export function UiSelect({
         <UiText
           style={{
             fontFamily: "Inter_700Bold",
-            fontSize: 14,
+            fontSize,
             color: COLORS.portalInk,
           }}
         >
@@ -85,7 +102,9 @@ export function UiSelect({
         visible={visible}
         transparent
         animationType="slide"
-        onRequestClose={() => setVisible(false)}
+        onRequestClose={() => {
+          setVisible(false);
+        }}
       >
         <Pressable
           style={{
@@ -93,7 +112,9 @@ export function UiSelect({
             backgroundColor: "rgba(0,0,0,0.3)",
             justifyContent: "flex-end",
           }}
-          onPress={() => setVisible(false)}
+          onPress={() => {
+            setVisible(false);
+          }}
         >
           <Pressable
             style={{
@@ -102,7 +123,9 @@ export function UiSelect({
               borderTopRightRadius: RADIUS.lg,
               maxHeight: "75%",
             }}
-            onPress={(e) => e.stopPropagation()}
+            onPress={(e) => {
+              e.stopPropagation();
+            }}
           >
             {/* Selected Item - Blue Header */}
             <View
@@ -115,7 +138,7 @@ export function UiSelect({
               <UiText
                 style={{
                   fontFamily: "Inter_700Bold",
-                  fontSize: 14,
+                  fontSize,
                   color: COLORS.white,
                 }}
               >
@@ -128,7 +151,7 @@ export function UiSelect({
               style={{
                 paddingHorizontal: 0,
               }}
-              showsVerticalScrollIndicator={true}
+              showsVerticalScrollIndicator
             >
               {options.map((option) => {
                 const isSelected = option.value === value;
@@ -154,21 +177,15 @@ export function UiSelect({
                   >
                     <UiText
                       style={{
-                        fontFamily: isSelected
-                          ? "Inter_700Bold"
-                          : "Inter_600SemiBold",
-                        fontSize: 14,
+                        fontFamily: isSelected ? "Inter_700Bold" : "Inter_600SemiBold",
+                        fontSize,
                         color: isSelected ? COLORS.portalInk : COLORS.ink3,
                       }}
                     >
                       {option.label}
                     </UiText>
                     {isSelected && (
-                      <Ionicons
-                        name="checkmark"
-                        size={20}
-                        color={COLORS.portalInk}
-                      />
+                      <Ionicons name="checkmark" size={20} color={COLORS.portalInk} />
                     )}
                   </Pressable>
                 );
@@ -182,4 +199,3 @@ export function UiSelect({
     </>
   );
 }
-

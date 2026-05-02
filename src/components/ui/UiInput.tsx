@@ -39,11 +39,12 @@ export function UiInput({
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: "row",
+    alignItems: "stretch",
     borderWidth: 1,
     borderColor: COLORS.border,
     backgroundColor: COLORS.whiteSecondary,
     borderRadius: RADIUS.md,
-    minHeight: 56,
     paddingHorizontal: SPACING.md,
   },
   logoContainer: {
@@ -54,9 +55,11 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
+    alignSelf: "stretch",
+    minHeight: 0,
     color: COLORS.textPrimary,
     fontFamily: FONT_FAMILIES.regular,
-    fontSize: FONT_SIZE.md,
+    fontSize: FONT_SIZE.base,
     paddingVertical: SPACING.sm,
   },
 });

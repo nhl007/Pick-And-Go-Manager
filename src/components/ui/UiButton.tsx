@@ -37,14 +37,14 @@ export const UiButton = ({
   children,
   height,
   width,
-  blur = false,
   icon,
   iconSize,
   backgroundColor,
   gap = 8,
   iconStyle,
+  blur = false,
   blurIntensity = 40,
-  radius = "lg",
+  radius = "sm",
 }: UiButtonProps) => {
   const widthStyle = width ?? "100%";
 
@@ -57,8 +57,6 @@ export const UiButton = ({
         {
           height,
           width: widthStyle,
-          flexShrink: typeof width === "number" ? 0 : undefined,
-          flexGrow: typeof width === "number" ? 0 : undefined,
           gap,
           backgroundColor,
           borderRadius: typeof radius === "number" ? radius : RADIUS[radius],
@@ -92,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.secondary,
   },
   outline: {
-    backgroundColor: COLORS.background,
+    backgroundColor: "transparent",
     borderWidth: 1,
     borderColor: COLORS.border,
   },
