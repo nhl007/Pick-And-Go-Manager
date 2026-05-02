@@ -1,6 +1,6 @@
 import { Redirect } from "expo-router";
 
-import { EXPLORE_TAB_HREF, LOGIN_SCREEN_HREF } from "@/constants/routes";
+import { LOGIN_SCREEN_HREF, TAB_INDEX_HREF } from "@/constants/routes";
 import { useAuthStore } from "@/store/auth.store";
 
 export default function Index() {
@@ -11,5 +11,5 @@ export default function Index() {
     return null;
   }
 
-  return <Redirect href={isAuthenticated ? EXPLORE_TAB_HREF : LOGIN_SCREEN_HREF} />;
+  return <Redirect href={isAuthenticated ? TAB_INDEX_HREF : LOGIN_SCREEN_HREF} />;
 }
