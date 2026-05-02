@@ -34,6 +34,8 @@ export const COLORS = {
   trendPositiveDeep: "#8B6F00",
   neonOrange: "#FF8A00",
   neonYellow: "#FFE500",
+  /** Portal neon accent (HTML `--neon-red`) */
+  neonRed: "#FF3355",
   chartWarm: "#FFB05E",
   chartSand: "#E5C6A8",
   chartSilver: "#CFCFCF",
