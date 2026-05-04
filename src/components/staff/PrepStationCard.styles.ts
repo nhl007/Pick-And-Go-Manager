@@ -27,8 +27,6 @@ export const prepStationCardStyles = StyleSheet.create({
   },
   headerTitle: {
     fontFamily: "Inter_800ExtraBold",
-    fontSize: 12,
-    letterSpacing: 1.4,
     textTransform: "uppercase",
     color: COLORS.portalInk,
     flexShrink: 1,
@@ -37,19 +35,20 @@ export const prepStationCardStyles = StyleSheet.create({
     paddingHorizontal: SPACING.sm,
     paddingVertical: 4,
     borderRadius: RADIUS.full,
-    backgroundColor: "rgba(255, 229, 0, 0.35)",
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: "rgba(239, 159, 39, 0.35)",
+    borderColor: COLORS.warmOrange,
+    color: COLORS.warmOrange
   },
   peakBadgeTxt: {
     fontFamily: "Inter_700Bold",
-    fontSize: 10,
+    fontSize: 12,
     color: COLORS.trendPositiveDeep,
   },
   stationItem: {
-    backgroundColor: COLORS.whiteSecondary,
+    // backgroundColor: COLORS.whiteSecondary,
+    borderEndWidth: 2,
     borderRadius: RADIUS.md,
-    paddingVertical: SPACING.sm,
+    paddingVertical: SPACING.md,
     paddingHorizontal: SPACING.md,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: COLORS.hairline,
@@ -99,7 +98,7 @@ export const prepStationCardStyles = StyleSheet.create({
   },
   workloadBadgeTxt: {
     fontFamily: "Inter_700Bold",
-    fontSize: 9,
+    fontSize: 10,
     letterSpacing: 0.6,
   },
   workloadHeavy: {
@@ -135,6 +134,7 @@ export const prepStationCardStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: SPACING.sm,
+    marginTop: 4
   },
   assigneeLeft: {
     flexDirection: "row",

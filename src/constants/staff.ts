@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { COLORS, RADIUS, SPACING } from "@/constants/styles";
+import { COLORS, FONT_FAMILIES, RADIUS, SPACING } from "@/constants/styles";
 
 export const staffStyles = StyleSheet.create({
   screen: {
@@ -156,7 +156,6 @@ export const staffStyles = StyleSheet.create({
     maxWidth: 320,
     paddingTop: 6,
     fontFamily: "Inter_400Regular",
-    fontSize: 12,
     lineHeight: 18,
     color: COLORS.ink3,
   },
@@ -171,14 +170,13 @@ export const staffStyles = StyleSheet.create({
   },
   sectionTitle: {
     fontFamily: "Inter_800ExtraBold",
-    fontSize: 15,
-    letterSpacing: -0.3,
     color: COLORS.portalInk,
+    marginRight: 12
   },
   sectionCaption: {
     flex: 1,
-    fontFamily: "Inter_600SemiBold",
-    fontSize: 11,
+    fontFamily: FONT_FAMILIES.regular,
+    fontSize: 14,
     color: COLORS.ink4,
     minWidth: 160,
   },
@@ -191,17 +189,17 @@ export const staffStyles = StyleSheet.create({
     alignSelf: "flex-start",
     gap: 6,
     paddingHorizontal: SPACING.sm,
-    paddingVertical: 4,
+    paddingVertical: 6,
     borderRadius: RADIUS.full,
-    backgroundColor: "rgba(255, 229, 0, 0.35)",
+    backgroundColor: COLORS.black,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: "rgba(239, 159, 39, 0.35)",
   },
   liveBadgeText: {
     fontFamily: "Inter_800ExtraBold",
-    fontSize: 9,
-    letterSpacing: 1.2,
-    color: COLORS.portalInk,
+    fontSize: 10,
+    letterSpacing: 1,
+    color: COLORS.white,
   },
   attendancePanel: {
     backgroundColor: COLORS.white,
@@ -228,10 +226,8 @@ export const staffStyles = StyleSheet.create({
   },
   panelKicker: {
     fontFamily: "Inter_700Bold",
-    fontSize: 9,
-    letterSpacing: 1.5,
+    letterSpacing: 1,
     textTransform: "uppercase",
-    color: COLORS.ink4,
     flexShrink: 1,
     flex: 1,
     minWidth: 0,
@@ -245,17 +241,14 @@ export const staffStyles = StyleSheet.create({
   },
   quickStatYellow: {
     fontFamily: "Inter_700Bold",
-    fontSize: 10,
     color: COLORS.trendPositiveDeep,
   },
   quickStatOrange: {
     fontFamily: "Inter_700Bold",
-    fontSize: 10,
     color: COLORS.neonOrange,
   },
   quickStatGrey: {
     fontFamily: "Inter_700Bold",
-    fontSize: 10,
     color: COLORS.ink4,
   },
 
@@ -283,7 +276,7 @@ export const staffStyles = StyleSheet.create({
   },
   snapshotCardAccent: {
     borderStartWidth: 4,
-    borderStartColor: COLORS.neonYellow,
+    borderStartColor: COLORS.black,
   },
   snapshotIconWrap: {
     width: 28,
@@ -311,9 +304,10 @@ export const staffStyles = StyleSheet.create({
   },
   snapshotLabel: {
     fontFamily: "Inter_600SemiBold",
-    fontSize: 10,
+    fontSize: 14,
     lineHeight: 14,
-    color: COLORS.ink3,
+    color: COLORS.ink4,
+    marginTop: 4
   },
   initialsStack: {
     flexDirection: "row",
@@ -374,19 +368,18 @@ export const staffStyles = StyleSheet.create({
     paddingHorizontal: SPACING.sm,
     paddingVertical: 3,
     borderRadius: RADIUS.full,
-    backgroundColor: "rgba(239, 159, 39, 0.12)",
+    borderColor: COLORS.ink3
   },
   trophyText: {
     fontFamily: "Inter_800ExtraBold",
     fontSize: 9,
     letterSpacing: 0.8,
-    color: COLORS.neonOrange,
   },
   topAvatar: {
     width: 34,
     height: 34,
-    borderRadius: 17,
-    backgroundColor: "#0D9488",
+    borderRadius: 100,
+    backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -404,17 +397,17 @@ export const staffStyles = StyleSheet.create({
   },
   topName: {
     fontFamily: "Inter_700Bold",
-    fontSize: 13,
+    fontSize: 14,
     color: COLORS.portalInk,
   },
   topSub: {
     fontFamily: "Inter_600SemiBold",
-    fontSize: 10,
+    fontSize: 14,
     color: COLORS.ink4,
   },
   linkBold: {
     fontFamily: "Inter_800ExtraBold",
-    fontSize: 12,
+    fontSize: 14,
     color: COLORS.portalInk,
     textDecorationLine: "underline",
     flexShrink: 0,
@@ -465,10 +458,11 @@ export const staffStyles = StyleSheet.create({
     color: COLORS.portalInk,
   },
   dirBrowseDesc: {
-    fontFamily: "Inter_600SemiBold",
-    fontSize: 11,
+    fontSize: 14,
     lineHeight: 16,
     color: COLORS.ink4,
+    width: 580,
+    marginTop: 4
   },
   roleIconsRow: {
     flexDirection: "row",
@@ -507,7 +501,6 @@ export const staffStyles = StyleSheet.create({
   metricLbl: {
     marginTop: 2,
     fontFamily: "Inter_700Bold",
-    fontSize: 8,
     letterSpacing: 1.2,
     textTransform: "uppercase",
     color: COLORS.ink5,

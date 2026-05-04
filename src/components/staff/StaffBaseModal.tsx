@@ -36,7 +36,7 @@ export function StaffBaseModal({
   scrollableBody = true,
   bodyContentContainerStyle,
   maxWidth = 980,
-  maxHeight = 720
+  maxHeight = 720,
 }: StaffBaseModalProps) {
   return (
     <Modal transparent visible={visible} animationType="fade" onRequestClose={onClose}>
@@ -50,22 +50,33 @@ export function StaffBaseModal({
           accessibilityRole="button"
           accessibilityLabel="Dismiss"
         />
+
         <View style={[s.modalSheet, { maxWidth, maxHeight }]}>
+          
+          {/* Header */}
           {(header != null || showCloseIcon) && (
-            <View style={s.modalHeader}>
-              <View style={{ flex: 1 }}>{header}</View>
-              {showCloseIcon && (
-                <Pressable
-                  onPress={onClose}
-                  style={s.modalCloseBtn}
-                  accessibilityRole="button"
-                  accessibilityLabel="Close"
-                >
-                  <Ionicons name="close" size={22} color={COLORS.portalInk} />
-                </Pressable>
-              )}
-            </View>
+            <>
+              <View style={s.modalHeader}>
+                <View style={{ flex: 1 }}>{header}</View>
+
+                {showCloseIcon && (
+                  <Pressable
+                    onPress={onClose}
+                    style={s.modalCloseBtn}
+                    accessibilityRole="button"
+                    accessibilityLabel="Close"
+                  >
+                    <Ionicons name="close" size={22} color={COLORS.portalInk} />
+                  </Pressable>
+                )}
+              </View>
+
+              {/* ✅ Divider (added here) */}
+              <View style={s.modalDivider} />
+            </>
           )}
+
+          {/* Body */}
           {scrollableBody ? (
             <ScrollView
               keyboardShouldPersistTaps="handled"
@@ -75,8 +86,12 @@ export function StaffBaseModal({
               {children}
             </ScrollView>
           ) : (
-            <View style={[s.modalBodyPad, bodyContentContainerStyle]}>{children}</View>
+            <View style={[s.modalBodyPad, bodyContentContainerStyle]}>
+              {children}
+            </View>
           )}
+
+          {/* Footer */}
           {footer}
         </View>
       </KeyboardAvoidingView>

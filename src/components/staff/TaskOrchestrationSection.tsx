@@ -29,7 +29,7 @@ export function TaskOrchestrationSection({
           { marginTop: SPACING.lg, justifyContent: "space-between", width: "100%" },
         ]}
       >
-        <View style={{ flex: 1, minWidth: 200 }}>
+        <View style={{ flexDirection: "row", alignItems: "baseline", flex: 1 }}>
           <UiText style={base.sectionTitle}>{t("staff.taskOrchestrationTitle")}</UiText>
           <UiText style={base.sectionCaption}>{t("staff.taskOrchestrationCaption")}</UiText>
         </View>

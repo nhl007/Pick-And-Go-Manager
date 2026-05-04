@@ -43,4 +43,10 @@ export const i18nInitPromise: Promise<unknown> = i18n.isInitialized
       },
     });
 
+for (const [language, namespaces] of Object.entries(resources)) {
+  for (const [namespace, bundle] of Object.entries(namespaces)) {
+    i18n.addResourceBundle(language, namespace, bundle, true, true);
+  }
+}
+
 export default i18n;

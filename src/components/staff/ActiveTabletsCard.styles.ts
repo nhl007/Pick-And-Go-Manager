@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 import { COLORS, RADIUS, SPACING } from "@/constants/styles";
 
-export const operationalChecklistStyles = StyleSheet.create({
+export const activeTabletsCardStyles = StyleSheet.create({
   card: {
     flex: 1,
     minWidth: 0,
@@ -23,16 +23,17 @@ export const operationalChecklistStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: SPACING.sm,
-    marginBottom: SPACING.sm,
+    marginBottom: SPACING.md,
   },
   headerTitle: {
     fontFamily: "Inter_800ExtraBold",
-    fontSize: 14,
+    fontSize: 12,
+    letterSpacing: 1.4,
     textTransform: "uppercase",
     color: COLORS.portalInk,
     flexShrink: 1,
   },
-  doneBadge: {
+  onlineBadge: {
     paddingHorizontal: SPACING.sm,
     paddingVertical: 4,
     borderRadius: RADIUS.full,
@@ -40,81 +41,59 @@ export const operationalChecklistStyles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: COLORS.hairline,
   },
-  doneBadgeTxt: {
+  onlineBadgeTxt: {
     fontFamily: "Inter_700Bold",
     fontSize: 10,
     color: COLORS.ink2,
-    fontVariant: ["tabular-nums"],
   },
-  progressRow: {
+  tabletItem: {
     flexDirection: "row",
     alignItems: "center",
     gap: SPACING.sm,
-    marginBottom: SPACING.md,
-    marginTop: SPACING.sm 
-  },
-  progressTrack: {
-    flex: 1,
-    height: 7,
-    borderRadius: 3,
-    backgroundColor: "rgba(0,0,0,0.06)",
-    overflow: "hidden",
-  },
-  progressFill: {
-    height: "100%",
-    borderRadius: 4,
-    backgroundColor: COLORS.black,
-  },
-  progressPctTxt: {
-    fontFamily: "Inter_800ExtraBold",
-    fontSize: 14,
-    color: COLORS.black,
-    fontVariant: ["tabular-nums"],
-  },
-  taskItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: SPACING.md,
-    paddingVertical: SPACING.md,
-    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    paddingHorizontal: SPACING.sm,
     borderRadius: RADIUS.md,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: COLORS.hairline,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.whiteSecondary,
     marginBottom: SPACING.sm,
   },
-  taskItemDone: {
-    backgroundColor: "rgba(255, 229, 0, 0.10)",
-    borderColor: "rgba(255, 199, 0, 0.45)",
-  },
-  checkBox: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
+  tabletIconWrap: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: COLORS.white,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1.5,
+    borderWidth: StyleSheet.hairlineWidth,
     borderColor: COLORS.hairline,
-    backgroundColor: COLORS.white,
-    flexShrink: 0,
   },
-  checkBoxDone: {
-    backgroundColor: COLORS.trendPositive,
-    borderColor: COLORS.trendPositive,
-  },
-  taskBody: {
+  tabletBody: {
     flex: 1,
     minWidth: 0,
-    gap: 4,
+    gap: 2,
   },
-  taskTitle: {
-    fontFamily: "Inter_700Bold",
-    fontSize: 14,
+  tabletTitle: {
+    fontFamily: "Inter_800ExtraBold",
+    fontSize: 12,
     color: COLORS.portalInk,
   },
-  taskMeta: {
+  tabletMeta: {
     fontFamily: "Inter_600SemiBold",
-    fontSize: 12,
+    fontSize: 10,
     color: COLORS.ink4,
+  },
+  logoutBtn: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 6,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.white,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+  },
+  logoutBtnTxt: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 10,
+    color: COLORS.ink2,
   },
 });

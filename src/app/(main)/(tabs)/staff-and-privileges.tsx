@@ -1,12 +1,24 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useMemo, useState } from "react";
-import { I18nManager, Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
+import {
+  I18nManager,
+  Pressable,
+  ScrollView,
+  Text,
+  useWindowDimensions,
+  View,
+} from "react-native";
 
 import { AddTeamMemberModal } from "@/components/staff/AddTeamMemberModal";
+import { AdvancedManagementSection } from "@/components/staff/AdvancedManagementSection";
 import { AllStaffModal } from "@/components/staff/AllMember";
-import { AllTeamMembersModal, type TeamMember } from "@/components/staff/AllTeamMembersModal";
+import {
+  AllTeamMembersModal,
+  type TeamMember,
+} from "@/components/staff/AllTeamMembersModal";
 import { EditProfileModal } from "@/components/staff/EditProfileModal";
 import { EmployeeDetailModal } from "@/components/staff/EmployeeDetailModal";
+import { RoleManagementSection } from "@/components/staff/RoleManagementSection";
 import { TaskOrchestrationSection } from "@/components/staff/TaskOrchestrationSection";
 import { UiLiveBlinkDot } from "@/components/ui/UiLiveBlinkDot";
 import { UiText } from "@/components/ui/UiText";
@@ -90,7 +102,10 @@ export default function StaffAndPrivilegesScreen() {
     <>
       <ScrollView
         style={styles.screen}
-        contentContainerStyle={[styles.scrollContent, { paddingHorizontal: horizontalPad }]}
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingHorizontal: horizontalPad },
+        ]}
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.heroDisplay}>
@@ -144,7 +159,9 @@ export default function StaffAndPrivilegesScreen() {
             <UiText style={styles.h1Light}>{t("staff.titleLine1")}</UiText>
             <UiText style={styles.h1Strong}>{t("staff.titleStrong")}</UiText>
           </View>
-          <UiText style={styles.tag}>{t("staff.subtitle")}</UiText>
+          <UiText style={styles.tag} size="sm">
+            {t("staff.subtitle")}
+          </UiText>
         </View>
 
         <View
@@ -154,10 +171,17 @@ export default function StaffAndPrivilegesScreen() {
             { justifyContent: "space-between", width: "100%" },
           ]}
         >
-          <View style={{ flex: 1, minWidth: 180 }}>
-            <UiText style={styles.sectionTitle}>{t("staff.operationsTitle")}</UiText>
+          <View style={{ flexDirection: "row", alignItems: "baseline", flex: 1 }}>
+            <UiText
+              style={[styles.sectionTitle, { marginRight: 14 }]}
+              font="bold"
+              size="lg"
+            >
+              {t("staff.operationsTitle")}
+            </UiText>
             <UiText style={styles.sectionCaption}>{t("staff.operationsCaption")}</UiText>
           </View>
+
           <View style={[styles.liveBadge, isRtl && styles.rowRtl]}>
             <UiLiveBlinkDot />
             <UiText style={styles.liveBadgeText}>{t("staff.live")}</UiText>
@@ -166,26 +190,37 @@ export default function StaffAndPrivilegesScreen() {
 
         <View style={styles.attendancePanel}>
           <View style={[styles.panelKickerRow, isRtl && styles.rowRtl]}>
-            <UiText style={styles.panelKicker}>{t("staff.digitalClockKicker")}</UiText>
+            <UiText style={styles.sectionTitle} color="black" size="sm" font="bold">
+              {t("staff.digitalClockKicker")}
+            </UiText>
             <View style={[styles.panelQuickStats, isRtl && styles.rowRtl]}>
-              <UiText style={styles.quickStatYellow}>
+              <UiText style={styles.quickStatYellow} size="xs">
                 {t("staff.quickStatClocked", { count: HEADER_QUICK.clocked })}
               </UiText>
-              <UiText style={styles.quickStatOrange}>
+              <UiText style={styles.quickStatOrange} size="xs">
                 {t("staff.quickStatLate", { count: HEADER_QUICK.late })}
               </UiText>
-              <UiText style={styles.quickStatGrey}>
+              <UiText style={styles.quickStatGrey} size="xs">
                 {t("staff.quickStatOff", { count: HEADER_QUICK.off })}
               </UiText>
             </View>
           </View>
 
-          {/* ───────────── snapshot row — 3 cards, each laid out [icon | value+label | initials] ───────────── */}
           <View style={[styles.snapshotGrid, isRtl && styles.rowRtl]}>
             {/* Card 1 — Clocked in */}
-            <View style={[styles.snapshotCard, styles.snapshotCardAccent, isRtl && styles.rowRtl]}>
+            <View
+              style={[
+                styles.snapshotCard,
+                styles.snapshotCardAccent,
+                isRtl && styles.rowRtl,
+              ]}
+            >
               <View style={styles.snapshotIconWrap}>
-                <Ionicons name="checkmark-circle" size={22} color={COLORS.trendPositiveDeep} />
+                <Ionicons
+                  name="checkmark-circle"
+                  size={22}
+                  color={COLORS.trendPositiveDeep}
+                />
               </View>
               <View style={styles.snapshotBody}>
                 <UiText
@@ -194,7 +229,7 @@ export default function StaffAndPrivilegesScreen() {
                 >
                   {String(SNAPSHOT.clocked)}
                 </UiText>
-                <UiText style={styles.snapshotLabel} numberOfLines={2}>
+                <UiText style={styles.snapshotLabel} font="semiBold" numberOfLines={2}>
                   {t("staff.clockedInLabel")}
                 </UiText>
               </View>
@@ -213,7 +248,13 @@ export default function StaffAndPrivilegesScreen() {
             </View>
 
             {/* Card 2 — Late arrivals */}
-            <View style={[styles.snapshotCard, styles.snapshotCardAccent, isRtl && styles.rowRtl]}>
+            <View
+              style={[
+                styles.snapshotCard,
+                styles.snapshotCardAccent,
+                isRtl && styles.rowRtl,
+              ]}
+            >
               <View style={styles.snapshotIconWrap}>
                 <Ionicons name="time-outline" size={22} color={COLORS.portalInk} />
               </View>
@@ -237,25 +278,30 @@ export default function StaffAndPrivilegesScreen() {
               </View>
             </View>
 
-
-            <View style={[styles.snapshotCard, styles.snapshotCardAccent, isRtl && styles.rowRtl]}>
-            <View style={styles.snapshotIconWrap}>
+            <View
+              style={[
+                styles.snapshotCard,
+                styles.snapshotCardAccent,
+                isRtl && styles.rowRtl,
+              ]}
+            >
+              <View style={styles.snapshotIconWrap}>
                 <Ionicons name="calendar-outline" size={22} color={COLORS.portalInk} />
               </View>
               <View style={styles.snapshotBody}>
                 <UiText style={styles.snapshotValue} numberOfLines={1}>
-                {String(SNAPSHOT.off)}
+                  {String(SNAPSHOT.off)}
                 </UiText>
                 <UiText style={styles.snapshotLabel} numberOfLines={2}>
-                {t("staff.offTodayLabel")}
+                  {t("staff.offTodayLabel")}
                 </UiText>
               </View>
               <View style={[styles.initialsStack, isRtl && styles.rowRtl]}>
                 <View style={[styles.initialsStack, isRtl && styles.rowRtl]}>
-                <View style={styles.initialsPill}>
-                  <UiText style={styles.initialsText}>FB</UiText>
+                  <View style={styles.initialsPill}>
+                    <UiText style={styles.initialsText}>FB</UiText>
+                  </View>
                 </View>
-              </View>
               </View>
             </View>
           </View>
@@ -264,7 +310,9 @@ export default function StaffAndPrivilegesScreen() {
             <View style={[styles.topTodayRow, isRtl && styles.rowRtl]}>
               <View style={[styles.trophyBadge, isRtl && styles.rowRtl]}>
                 <Ionicons name="trophy" size={12} color={COLORS.neonOrange} />
-                <UiText style={styles.trophyText}>{t("staff.topTodayBadge")}</UiText>
+                <UiText style={styles.trophyText} color="black">
+                  {t("staff.topTodayBadge")}
+                </UiText>
               </View>
               <View style={styles.topAvatar}>
                 <UiText style={styles.topAvatarTxt}>AK</UiText>
@@ -289,10 +337,15 @@ export default function StaffAndPrivilegesScreen() {
             { marginTop: SPACING.lg, justifyContent: "space-between", width: "100%" },
           ]}
         >
-          <View style={{ flex: 1, minWidth: 200 }}>
-            <UiText style={styles.sectionTitle}>{t("staff.teamDirectoryTitle")}</UiText>
-            <UiText style={styles.sectionCaption}>{t("staff.teamDirectoryCaption")}</UiText>
+          <View style={{ flexDirection: "row", alignItems: "baseline", flex: 1 }}>
+            <UiText style={[styles.sectionTitle, { marginRight: 12 }]}>
+              {t("staff.teamDirectoryTitle")}
+            </UiText>
+            <UiText style={styles.sectionCaption}>
+              {t("staff.teamDirectoryCaption")}
+            </UiText>
           </View>
+
           <View style={styles.registeredBadge}>
             <UiText style={styles.registeredBadgeText}>
               {t("staff.registeredBadge", { count: TEAM.registered })}
@@ -303,8 +356,10 @@ export default function StaffAndPrivilegesScreen() {
         <View style={styles.dirCardOuter}>
           <View style={[styles.dirMainRow, isRtl && styles.rowRtl]}>
             <View style={styles.dirLeftCol}>
-              <UiText style={styles.dirBrowseTitle}>{t("staff.browseMembersTitle")}</UiText>
-              <UiText style={styles.dirBrowseDesc}>{t("staff.browseMembersDesc")}</UiText>
+              <UiText style={styles.dirBrowseTitle}>
+                {t("staff.browseMembersTitle")}
+              </UiText>
+              <UiText style={styles.dirBrowseDesc} size="sm" numberOfLines={2}>{t("staff.browseMembersDesc")}</UiText>
             </View>
             <View style={[styles.roleIconsRow, isRtl && styles.rowRtl]}>
               <View style={styles.roleIconCircle}>
@@ -328,28 +383,36 @@ export default function StaffAndPrivilegesScreen() {
             <View style={[styles.metricColumns, isRtl && styles.rowRtl]}>
               <View style={styles.metricCol}>
                 <UiText style={styles.metricValue}>{String(TEAM.registered)}</UiText>
-                <UiText style={styles.metricLbl}>{t("staff.metricMembers")}</UiText>
+                <UiText style={styles.metricLbl} size="xs">{t("staff.metricMembers")}</UiText>
               </View>
               <View style={styles.metricCol}>
                 <UiText style={styles.metricValue}>{String(TEAM.roles)}</UiText>
-                <UiText style={styles.metricLbl}>{t("staff.metricRoles")}</UiText>
+                <UiText style={styles.metricLbl} size="xs">{t("staff.metricRoles")}</UiText>
               </View>
               <View style={styles.metricCol}>
                 <UiText style={styles.metricValue}>{TEAM.avgRating}</UiText>
-                <UiText style={styles.metricLbl}>{t("staff.metricAvgRating")}</UiText>
+                <UiText style={styles.metricLbl} size="xs">{t("staff.metricAvgRating")}</UiText>
               </View>
               <View style={styles.metricCol}>
                 <UiText style={styles.metricValue}>{TEAM.attendance}</UiText>
-                <UiText style={styles.metricLbl}>{t("staff.metricAttendance")}</UiText>
+                <UiText style={styles.metricLbl} size="xs">{t("staff.metricAttendance")}</UiText>
               </View>
             </View>
-            <Pressable onPress={openTeamDirectory} hitSlop={8} style={styles.dirSeeAllInline}>
+            <Pressable
+              onPress={openTeamDirectory}
+              hitSlop={8}
+              style={styles.dirSeeAllInline}
+            >
               <UiText style={styles.linkBold}>{t("staff.seeAllMembers")} →</UiText>
             </Pressable>
           </View>
         </View>
 
         <TaskOrchestrationSection t={t} isRtl={isRtl} />
+
+        <RoleManagementSection t={t} isRtl={isRtl} />
+
+        <AdvancedManagementSection t={t} isRtl={isRtl} />
 
         <View style={{ height: SPACING.xxl }} />
       </ScrollView>

@@ -38,6 +38,7 @@ export const COLORS = {
   chartSand: "#E5C6A8",
   chartSilver: "#CFCFCF",
   chartMist: "#E0E0E0",
+  warmOrange: "#FF9500",
 
   error: "#EF4444",
   cancel: "#FF4242",
