@@ -4,6 +4,7 @@ import { I18nManager, Pressable, ScrollView, StyleSheet, View } from "react-nati
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { StatCard } from "@/components/StatCard";
+import { UICard } from "@/components/ui/UICard";
 import { UiDirhamSymbol } from "@/components/ui/UiDirhamSymbol";
 import { UiLiveSemiGauge } from "@/components/ui/UiLiveSemiGauge";
 import { UiSpacer } from "@/components/ui/UiSpacer";
@@ -276,7 +277,7 @@ export default function FinanceScreen() {
         <UiSpacer size="lg" />
 
         <View style={[styles.mainRow, isRtl && styles.rowRtl]}>
-          <View style={styles.transactionsCard}>
+          <UICard style={styles.transactionsCard}>
             <View
               style={[
                 styles.transactionsHeader,
@@ -317,9 +318,9 @@ export default function FinanceScreen() {
                 </View>
               </View>
             ))}
-          </View>
+          </UICard>
 
-          <View style={styles.payoutCard}>
+          <UICard style={styles.payoutCard}>
             <UiText size="md" font="bold" align="center">
               {t("financePage.payoutCardTitle")}
             </UiText>
@@ -339,7 +340,7 @@ export default function FinanceScreen() {
             <UiText size="sm" font="bold" align="center">
               {t("financePage.expectedPayout", { currency: CURRENCY, amount: "12,840" })}
             </UiText>
-          </View>
+          </UICard>
         </View>
 
         <UiSpacer size="xxl" />
@@ -545,15 +546,15 @@ const styles = StyleSheet.create({
   transactionsCard: {
     flex: 1,
     minWidth: 0,
-    backgroundColor: COLORS.white,
-    borderRadius: RADIUS.xl,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    padding: SPACING.lg,
-    shadowColor: COLORS.black,
-    shadowOpacity: 0.08,
-    shadowRadius: 20,
-    shadowOffset: { width: 0, height: 8 },
+    // backgroundColor: COLORS.white,
+    // borderRadius: RADIUS.xl,
+    // borderWidth: 1,
+    // borderColor: COLORS.border,
+    // padding: SPACING.lg,
+    // shadowColor: COLORS.black,
+    // shadowOpacity: 0.08,
+    // shadowRadius: 20,
+    // shadowOffset: { width: 0, height: 8 },
   },
   transactionsHeader: {
     flexDirection: "row",
@@ -600,15 +601,15 @@ const styles = StyleSheet.create({
     flex: 1,
     minWidth: 0,
     alignSelf: "stretch",
-    backgroundColor: COLORS.white,
-    borderRadius: RADIUS.xl,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    padding: SPACING.lg,
-    shadowColor: COLORS.black,
-    shadowOpacity: 0.08,
-    shadowRadius: 20,
-    shadowOffset: { width: 0, height: 8 },
+    // backgroundColor: COLORS.white,
+    // borderRadius: RADIUS.xl,
+    // borderWidth: 1,
+    // borderColor: COLORS.border,
+    // padding: SPACING.lg,
+    // shadowColor: COLORS.black,
+    // shadowOpacity: 0.08,
+    // shadowRadius: 20,
+    // shadowOffset: { width: 0, height: 8 },
   },
   payoutDivider: {
     height: 1,
