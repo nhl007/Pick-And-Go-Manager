@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {
   Pressable,
+  type StyleProp,
   StyleSheet,
   View,
-  type StyleProp,
   type ViewStyle,
 } from "react-native";
 
