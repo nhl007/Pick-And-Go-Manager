@@ -32,7 +32,7 @@ export function UiInput({
       style={[
         styles.container,
         containerStyle,
-        { borderColor: isFocused ? COLORS.primary : COLORS.border },
+        { borderColor: isFocused ? COLORS.black : COLORS.border },
       ]}
     >
       {logo && <View style={styles.logoContainer}>{logo}</View>}
