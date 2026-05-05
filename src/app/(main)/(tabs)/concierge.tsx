@@ -66,7 +66,10 @@ export default function ConciergeScreen() {
   return (
     <ScrollView
       style={controlStyles.screen}
-      contentContainerStyle={[controlStyles.scrollContent, { paddingHorizontal: horizontalPad }]}
+      contentContainerStyle={[
+        controlStyles.scrollContent,
+        { paddingHorizontal: horizontalPad },
+      ]}
       showsVerticalScrollIndicator={false}
     >
       <View style={controlStyles.heroDisplay}>
@@ -350,9 +353,24 @@ export default function ConciergeScreen() {
         onNewAudit={noop}
         recentLabel={t("concierge.recentAudits")}
         recent={[
-          { key: "a1", date: t("concierge.audit1Date"), title: t("concierge.audit1Title"), tag: t("concierge.audit1Tag") },
-          { key: "a2", date: t("concierge.audit2Date"), title: t("concierge.audit2Title"), tag: t("concierge.audit2Tag") },
-          { key: "a3", date: t("concierge.audit3Date"), title: t("concierge.audit3Title"), tag: t("concierge.audit3Tag") },
+          {
+            key: "a1",
+            date: t("concierge.audit1Date"),
+            title: t("concierge.audit1Title"),
+            tag: t("concierge.audit1Tag"),
+          },
+          {
+            key: "a2",
+            date: t("concierge.audit2Date"),
+            title: t("concierge.audit2Title"),
+            tag: t("concierge.audit2Tag"),
+          },
+          {
+            key: "a3",
+            date: t("concierge.audit3Date"),
+            title: t("concierge.audit3Title"),
+            tag: t("concierge.audit3Tag"),
+          },
         ]}
       />
 
@@ -365,9 +383,27 @@ export default function ConciergeScreen() {
           badge: t("concierge.wallBadge"),
           desc: t("concierge.wallDesc"),
           goals: [
-            { key: "g1", title: t("concierge.goal1Title"), pct: 78, pctLabel: t("concierge.goal1Pct"), sub: t("concierge.goal1Sub") },
-            { key: "g2", title: t("concierge.goal2Title"), pct: 33, pctLabel: t("concierge.goal2Pct"), sub: t("concierge.goal2Sub") },
-            { key: "g3", title: t("concierge.goal3Title"), pct: 92, pctLabel: t("concierge.goal3Pct"), sub: t("concierge.goal3Sub") },
+            {
+              key: "g1",
+              title: t("concierge.goal1Title"),
+              pct: 78,
+              pctLabel: t("concierge.goal1Pct"),
+              sub: t("concierge.goal1Sub"),
+            },
+            {
+              key: "g2",
+              title: t("concierge.goal2Title"),
+              pct: 33,
+              pctLabel: t("concierge.goal2Pct"),
+              sub: t("concierge.goal2Sub"),
+            },
+            {
+              key: "g3",
+              title: t("concierge.goal3Title"),
+              pct: 92,
+              pctLabel: t("concierge.goal3Pct"),
+              sub: t("concierge.goal3Sub"),
+            },
           ],
           openLabel: t("concierge.openWall"),
           onOpen: noop,
@@ -377,9 +413,25 @@ export default function ConciergeScreen() {
           badge: t("concierge.vaultEncrypted"),
           desc: t("concierge.vaultDesc"),
           files: [
-            { key: "v1", name: t("concierge.vaultFile1Name"), sub: t("concierge.vaultFile1Sub"), tag: t("concierge.vaultFile1Tag") },
-            { key: "v2", name: t("concierge.vaultFile2Name"), sub: t("concierge.vaultFile2Sub"), tag: t("concierge.vaultFile2Tag") },
-            { key: "v3", name: t("concierge.vaultFile3Name"), sub: t("concierge.vaultFile3Sub"), tag: t("concierge.vaultFile3Tag"), pending: true },
+            {
+              key: "v1",
+              name: t("concierge.vaultFile1Name"),
+              sub: t("concierge.vaultFile1Sub"),
+              tag: t("concierge.vaultFile1Tag"),
+            },
+            {
+              key: "v2",
+              name: t("concierge.vaultFile2Name"),
+              sub: t("concierge.vaultFile2Sub"),
+              tag: t("concierge.vaultFile2Tag"),
+            },
+            {
+              key: "v3",
+              name: t("concierge.vaultFile3Name"),
+              sub: t("concierge.vaultFile3Sub"),
+              tag: t("concierge.vaultFile3Tag"),
+              pending: true,
+            },
           ],
           uploadLabel: t("concierge.vaultUpload"),
           onUpload: noop,
@@ -389,7 +441,12 @@ export default function ConciergeScreen() {
           badge: t("concierge.vidsBadge"),
           desc: t("concierge.vidsDesc"),
           items: [
-            { key: "vd1", title: t("concierge.vid1Title"), sub: t("concierge.vid1Sub"), isNew: true },
+            {
+              key: "vd1",
+              title: t("concierge.vid1Title"),
+              sub: t("concierge.vid1Sub"),
+              isNew: true,
+            },
             { key: "vd2", title: t("concierge.vid2Title"), sub: t("concierge.vid2Sub") },
             { key: "vd3", title: t("concierge.vid3Title"), sub: t("concierge.vid3Sub") },
           ],
