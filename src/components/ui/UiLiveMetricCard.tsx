@@ -2,6 +2,7 @@ import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 
 import { COLORS } from "@/constants/styles";
 
+import { UICard } from "./UICard";
 import { UiText } from "./UiText";
 
 type UiLiveMetricCardProps = {
@@ -20,7 +21,7 @@ export function UiLiveMetricCard({
   style,
 }: UiLiveMetricCardProps) {
   return (
-    <View style={[styles.card, style]}>
+    <UICard style={[style]}>
       <View style={styles.top}>
         <UiText style={styles.name}>{title}</UiText>
         <UiText style={styles.metaSm}>{metaRight}</UiText>
@@ -29,24 +30,11 @@ export function UiLiveMetricCard({
         <View style={styles.value}>{value}</View>
         <View style={styles.stat}>{footer}</View>
       </View>
-    </View>
+    </UICard>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: COLORS.white,
-    borderRadius: 14,
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: COLORS.hairline,
-    shadowColor: "#000000",
-    shadowOpacity: 0.05,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 2,
-  },
   top: {
     flexDirection: "row",
     justifyContent: "space-between",
