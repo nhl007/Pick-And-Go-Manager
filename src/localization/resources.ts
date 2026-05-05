@@ -3,6 +3,7 @@ import {
   staffTranslationsEn,
 } from "@/localization/staff.translations";
 
+import { CONCIERGE_AR, CONCIERGE_EN } from "./concierge.translations";
 import { CONTROL_AR, CONTROL_EN } from "./control.translations";
 import { MEDIA_AR, MEDIA_EN } from "./media.translations";
 
@@ -178,6 +179,7 @@ export const resources = {
       },
       control: CONTROL_EN,
       media: MEDIA_EN,
+      concierge: CONCIERGE_EN,
       financePage: {
         heroBalance: "{{currency}} 47,283",
         availableBalancePrefix: "Available balance · ",
@@ -378,6 +380,7 @@ export const resources = {
       },
       control: CONTROL_AR,
       media: MEDIA_AR,
+      concierge: CONCIERGE_AR,
       financePage: {
         heroBalance: "{{currency}} 47,283",
         availableBalancePrefix: "الرصيد المتاح · ",
