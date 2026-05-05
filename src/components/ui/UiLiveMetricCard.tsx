@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 
 import { COLORS } from "@/constants/styles";
@@ -10,11 +9,16 @@ type UiLiveMetricCardProps = {
   metaRight: string;
   value: React.ReactNode;
   footer: React.ReactNode;
-  /** Merged after base card styles — use `flex: 1` with `justifyContent: "space-between"` to match sibling heights in a row. */
   style?: StyleProp<ViewStyle>;
 };
 
-export function UiLiveMetricCard({ title, metaRight, value, footer, style }: UiLiveMetricCardProps) {
+export function UiLiveMetricCard({
+  title,
+  metaRight,
+  value,
+  footer,
+  style,
+}: UiLiveMetricCardProps) {
   return (
     <View style={[styles.card, style]}>
       <View style={styles.top}>
