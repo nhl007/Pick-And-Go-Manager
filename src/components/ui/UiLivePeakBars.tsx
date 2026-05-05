@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 
 import { COLORS } from "@/constants/styles";
 
+import { UICard } from "./UICard";
 import { UiText } from "./UiText";
 
 export type UiLivePeakBar = {
@@ -30,7 +31,7 @@ export function UiLivePeakBars({
   bars,
 }: UiLivePeakBarsProps) {
   return (
-    <View style={styles.panel}>
+    <UICard>
       <View style={styles.head}>
         <View style={styles.headLeft}>
           <UiText style={styles.chartTitle}>{title}</UiText>
@@ -68,7 +69,7 @@ export function UiLivePeakBars({
           </View>
         ))}
       </View>
-    </View>
+    </UICard>
   );
 }
 
