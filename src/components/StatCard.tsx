@@ -9,7 +9,9 @@ import {
 
 import { UiSpacer } from "@/components/ui/UiSpacer";
 import { UiText } from "@/components/ui/UiText";
-import { COLORS, RADIUS, SPACING } from "@/constants/styles";
+import { COLORS, SPACING } from "@/constants/styles";
+
+import { UICard } from "./ui/UICard";
 
 export type StatCardProps = {
   title: string;
@@ -41,81 +43,86 @@ export function StatCard({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Pressable
-      accessibilityRole={onPress ? "button" : undefined}
-      onPress={onPress}
-      onHoverIn={() => {
-        setHovered(true);
-      }}
-      onHoverOut={() => {
-        setHovered(false);
-      }}
-      style={({ pressed }) => {
-        const active = selected || hovered || pressed;
-        return [styles.card, active && styles.cardActive, style];
+    <UICard
+      style={{
+        paddingTop: SPACING.lg,
+        paddingBottom: SPACING.xl,
       }}
     >
-      {(state) => {
-        const active = selected || hovered || state.pressed;
+      <Pressable
+        accessibilityRole={onPress ? "button" : undefined}
+        onPress={onPress}
+        onHoverIn={() => {
+          setHovered(true);
+        }}
+        onHoverOut={() => {
+          setHovered(false);
+        }}
+        style={({ pressed }) => {
+          // const active = selected || hovered || pressed;
+          // return [styles.card, active && styles.cardActive, style];
+          return [styles.card, style];
+        }}
+      >
+        {(state) => {
+          const active = selected || hovered || state.pressed;
 
-        const titleColor = active ? "white" : "black";
-        const metaColor = active ? "white" : topRightColor;
-        const footerResolved = active ? "white" : footerColor;
-        const valueResolved =
-          active && valueColor === "textPrimary" ? "white" : valueColor;
+          const titleColor = active ? "white" : "black";
+          const metaColor = active ? "white" : topRightColor;
+          const footerResolved = active ? "white" : footerColor;
+          const valueResolved =
+            active && valueColor === "textPrimary" ? "white" : valueColor;
 
-        return (
-          <View>
-            <View style={styles.topRow}>
-              <UiText size="md" font="semiBold" color={titleColor} align="left">
-                {title}
-              </UiText>
-              {topRight != null && topRight !== "" ? (
-                <UiText
-                  size="xs"
-                  font="semiBold"
-                  color={metaColor}
-                  align="right"
-                >
-                  {topRight}
+          return (
+            <View>
+              <View style={styles.topRow}>
+                <UiText size="md" font="semiBold" color={titleColor} align="left">
+                  {title}
                 </UiText>
-              ) : null}
-            </View>
-            <UiSpacer size="sm" />
-            <UiText size="xxxxl" font="bold" color={valueResolved} align="left">
-              {value}
-            </UiText>
-            {footer != null && footer !== "" ? (
-              <View style={styles.footer}>
-                <UiText
-                  size="xs"
-                  font={footerFont}
-                  color={footerResolved}
-                  align="right"
-                >
-                  {footer}
-                </UiText>
+                {topRight != null && topRight !== "" ? (
+                  <UiText size="xs" font="semiBold" color={metaColor} align="right">
+                    {topRight}
+                  </UiText>
+                ) : null}
               </View>
-            ) : null}
-          </View>
-        );
-      }}
-    </Pressable>
+              <UiSpacer size="sm" />
+              <View style={styles.valueContainer}>
+                <UiText size="xxxxl" font="bold" color={valueResolved} align="left">
+                  {value}
+                </UiText>
+                {footer != null && footer !== "" ? (
+                  <View style={styles.footer}>
+                    <UiText
+                      size="xs"
+                      font={footerFont}
+                      color={footerResolved}
+                      align="right"
+                    >
+                      {footer}
+                    </UiText>
+                  </View>
+                ) : null}
+              </View>
+            </View>
+          );
+        }}
+      </Pressable>
+    </UICard>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: COLORS.white,
-    borderRadius: RADIUS.xl,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    paddingHorizontal: SPACING.lg,
-    paddingVertical: 18,
-    shadowColor: COLORS.black,
-    shadowOpacity: 0.06,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 6 },
+    // backgroundColor: COLORS.white,
+    // borderRadius: RADIUS.xl,
+    // borderWidth: 1,
+    // borderColor: COLORS.border,
+    // paddingHorizontal: SPACING.lg,
+    // paddingVertical: 18,
+    // shadowColor: COLORS.black,
+    // shadowOpacity: 0.06,
+    // shadowRadius: 16,
+    // shadowOffset: { width: 0, height: 6 },
   },
   cardActive: {
     backgroundColor: COLORS.black,
@@ -133,5 +140,10 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm,
     flexDirection: "row",
     justifyContent: "flex-end",
+  },
+  valueContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
