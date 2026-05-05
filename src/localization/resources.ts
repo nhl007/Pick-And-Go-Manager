@@ -1,10 +1,10 @@
-import { CONTROL_AR, CONTROL_EN } from "./control.translations";
-import { MEDIA_AR, MEDIA_EN } from "./media.translations";
-
 import {
   staffTranslationsAr,
   staffTranslationsEn,
 } from "@/localization/staff.translations";
+
+import { CONTROL_AR, CONTROL_EN } from "./control.translations";
+import { MEDIA_AR, MEDIA_EN } from "./media.translations";
 
 export const SUPPORTED_LANGUAGES = ["en", "ar"] as const;
 
@@ -177,6 +177,7 @@ export const resources = {
         peakHeroMetaHighlight: "+38%",
       },
       control: CONTROL_EN,
+      media: MEDIA_EN,
       financePage: {
         heroBalance: "{{currency}} 47,283",
         availableBalancePrefix: "Available balance · ",
@@ -376,6 +377,7 @@ export const resources = {
         peakHeroMetaHighlight: "+38%",
       },
       control: CONTROL_AR,
+      media: MEDIA_AR,
       financePage: {
         heroBalance: "{{currency}} 47,283",
         availableBalancePrefix: "الرصيد المتاح · ",
@@ -414,6 +416,7 @@ export const resources = {
         unitMinuteShort: "د",
         unitSecondShort: "ث",
       },
+
       staff: staffTranslationsAr,
     },
   },
