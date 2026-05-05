@@ -15,7 +15,7 @@ export function AuthScreenBackdrop() {
 
 const styles = StyleSheet.create({
   backgroundLayer: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
   },
   blobTop: {
     position: "absolute",
