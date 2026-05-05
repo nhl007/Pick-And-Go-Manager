@@ -248,7 +248,7 @@ export default function ResetPasswordScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: "transparent",
   },
   keyboardRoot: {
     flex: 1,

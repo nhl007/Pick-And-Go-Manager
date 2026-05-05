@@ -2,7 +2,6 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { router } from "expo-router";
 import React, { useMemo, useState } from "react";
 import {
-  ActivityIndicator,
   Alert,
   I18nManager,
   Image,
@@ -14,7 +13,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { AuthScreenBackdrop } from "@/components/auth/AuthScreenBackdrop";
+import BuildingIcon from "@/assets/icons/building";
+import LockIcon from "@/assets/icons/lock";
+import MailIcon from "@/assets/icons/mail";
+import { UiButton } from "@/components/ui/UiButton";
 import UICheckBox from "@/components/ui/UICheckBox";
 import UiInput from "@/components/ui/UiInput";
 import { UiSpacer } from "@/components/ui/UiSpacer";
@@ -58,8 +60,6 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.screen}>
-      <AuthScreenBackdrop />
-
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={styles.keyboardRoot}
@@ -73,7 +73,7 @@ export default function LoginScreen() {
               />
             </View>
 
-            <UiText size="xxxl" font="bold" align={isRtl ? "right" : "left"}>
+            <UiText size="xxxl" font="black" align={isRtl ? "right" : "left"}>
               {t("auth.welcome")}
             </UiText>
             <UiText
@@ -98,7 +98,8 @@ export default function LoginScreen() {
                   {t("auth.workEmailOrWhatsapp")}
                 </UiText>
                 <UiInput
-                  logo={<Ionicons name="mail" size={24} color={COLORS.textSecondary} />}
+                  height={48}
+                  logo={<MailIcon color={COLORS.textSecondary} />}
                   autoCapitalize="none"
                   autoCorrect={false}
                   autoComplete="username"
@@ -121,9 +122,8 @@ export default function LoginScreen() {
               </UiText>
               <View style={styles.passwordInputWrapper}>
                 <UiInput
-                  logo={
-                    <Ionicons name="lock-closed" size={24} color={COLORS.textSecondary} />
-                  }
+                  height={48}
+                  logo={<LockIcon color={COLORS.textSecondary} />}
                   autoCapitalize="none"
                   autoCorrect={false}
                   autoComplete="current-password"
@@ -170,29 +170,26 @@ export default function LoginScreen() {
                 </Pressable>
               </View>
 
-              <Pressable
+              <UiButton
+                height={48}
+                radius="md"
                 onPress={handleLogin}
-                disabled={isPending}
-                style={[styles.primaryButton, isPending && styles.primaryButtonDisabled]}
+                loading={isPending}
+                variant="outline"
+                style={[styles.primaryButton]}
               >
-                {isPending ? (
-                  <ActivityIndicator color={COLORS.white} />
-                ) : (
-                  <View style={styles.primaryButtonContent}>
-                    <UiText size="md" font="semiBold" color="white" align="left">
-                      {t("auth.signIn")}
-                    </UiText>
-                    <UiText size="md" font="semiBold" color="white" align="left">
-                      →
-                    </UiText>
-                  </View>
-                )}
-              </Pressable>
+                <UiText size="md" font="semiBold" color="textPrimary" align="left">
+                  {t("auth.signIn")}
+                </UiText>
+                <UiText size="md" font="semiBold" color="textPrimary" align="left">
+                  →
+                </UiText>
+              </UiButton>
 
               <View style={styles.dividerWrap}>
                 <View style={styles.dividerLine} />
-                <UiText size="xs" font="regular" color="textSecondary" align="center">
-                  {t("auth.newToPickAndGo")}
+                <UiText size="xs" font="semiBold" color="textSecondary" align="center">
+                  {t("auth.newToPickAndGo").toUpperCase()}
                 </UiText>
                 <View style={styles.dividerLine} />
               </View>
@@ -204,10 +201,11 @@ export default function LoginScreen() {
                 disabled={isPending}
                 style={styles.secondaryButton}
               >
-                <UiText size="md" font="medium" align="left">
+                <BuildingIcon width={20} height={20} color={COLORS.textSecondary} />
+                <UiText color="textSecondary" size="base" font="semiBold" align="left">
                   {t("auth.registerBusiness")}
                 </UiText>
-                <UiText size="md" font="semiBold" align="left">
+                <UiText color="textSecondary" size="md" font="semiBold" align="left">
                   →
                 </UiText>
               </Pressable>
@@ -222,7 +220,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: "transparent",
   },
   keyboardRoot: {
     flex: 1,
@@ -354,11 +352,8 @@ const styles = StyleSheet.create({
   },
   primaryButton: {
     marginTop: SPACING.sm,
-    minHeight: 56,
-    borderRadius: RADIUS.md,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: COLORS.gray,
+    borderColor: COLORS.black,
+    borderWidth: 1,
   },
   primaryButtonDisabled: {
     opacity: 0.7,
@@ -382,7 +377,7 @@ const styles = StyleSheet.create({
     marginTop: SPACING.sm,
     flexDirection: "row",
     alignItems: "center",
-    gap: SPACING.sm,
+    gap: SPACING.md,
   },
   dividerLine: {
     flex: 1,
@@ -397,10 +392,6 @@ const styles = StyleSheet.create({
   },
   secondaryButton: {
     minHeight: 52,
-    borderRadius: RADIUS.md,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    backgroundColor: COLORS.white,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
