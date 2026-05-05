@@ -5,7 +5,7 @@ import { COLORS, RADIUS, SPACING } from "@/constants/styles";
 export const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: "transparent",
   },
   scrollContent: {
     paddingBottom: SPACING.xxl,
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   heroAmountRow: {
     flexDirection: "row",
-    alignItems: "baseline",
+    alignItems: "center",
     justifyContent: "center",
     gap: SPACING.sm,
   },
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
   },
   heroNumber: {
     fontFamily: "Inter_900Black",
-    fontSize: 56,
+    fontSize: 72,
     letterSpacing: -3,
     fontVariant: ["tabular-nums"],
     color: COLORS.portalInk,
@@ -200,7 +200,7 @@ export const styles = StyleSheet.create({
     color: COLORS.portalInk,
   },
   metricBigXl: {
-    fontFamily: "Inter_500Medium",
+    fontFamily: "Inter_900Black",
     fontSize: 28,
     letterSpacing: -0.6,
     fontVariant: ["tabular-nums"],
@@ -208,7 +208,7 @@ export const styles = StyleSheet.create({
   },
   finBigRow: {
     flexDirection: "row",
-    alignItems: "baseline",
+    alignItems: "center",
     gap: 4,
   },
   statRow: {
@@ -220,7 +220,7 @@ export const styles = StyleSheet.create({
   },
   statText: {
     fontFamily: "Inter_600SemiBold",
-    fontSize: 11,
+    fontSize: 12,
     color: COLORS.ink3,
     textAlign: "right",
   },
@@ -274,7 +274,6 @@ export const styles = StyleSheet.create({
   },
   finCardEqualHeight: {
     flex: 1,
-    justifyContent: "space-between",
   },
   finThird: {
     flex: 1,
