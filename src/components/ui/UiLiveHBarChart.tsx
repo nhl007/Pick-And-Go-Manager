@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 import { COLORS } from "@/constants/styles";
 
+import { UICard } from "./UICard";
 import { UiText } from "./UiText";
 
 export type UiLiveHBarItem = {
@@ -20,9 +21,15 @@ type UiLiveHBarChartProps = {
   items: UiLiveHBarItem[];
 };
 
-export function UiLiveHBarChart({ title, subtitle, heroValue, heroMeta, items }: UiLiveHBarChartProps) {
+export function UiLiveHBarChart({
+  title,
+  subtitle,
+  heroValue,
+  heroMeta,
+  items,
+}: UiLiveHBarChartProps) {
   return (
-    <View style={styles.panel}>
+    <UICard>
       <View style={styles.head}>
         <View style={styles.headLeft}>
           <UiText style={styles.chartTitle}>{title}</UiText>
@@ -41,13 +48,18 @@ export function UiLiveHBarChart({ title, subtitle, heroValue, heroMeta, items }:
               {it.name}
             </UiText>
             <View style={styles.track}>
-              <View style={[styles.fill, { width: `${it.widthPct}%`, backgroundColor: it.barColor }]} />
+              <View
+                style={[
+                  styles.fill,
+                  { width: `${it.widthPct}%`, backgroundColor: it.barColor },
+                ]}
+              />
             </View>
             <UiText style={styles.val}>{it.value}</UiText>
           </View>
         ))}
       </View>
-    </View>
+    </UICard>
   );
 }
 
