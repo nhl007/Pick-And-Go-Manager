@@ -35,7 +35,7 @@ export const UiButton = ({
   variant = "primary",
   style,
   children,
-  height,
+  height = 40,
   width,
   icon,
   iconSize,
@@ -53,7 +53,6 @@ export const UiButton = ({
       style={[
         styles.button,
         styles[variant],
-        style,
         {
           height,
           width: widthStyle,
@@ -61,6 +60,7 @@ export const UiButton = ({
           backgroundColor,
           borderRadius: typeof radius === "number" ? radius : RADIUS[radius],
         },
+        style,
       ]}
       onPress={onPress}
       disabled={loading}
