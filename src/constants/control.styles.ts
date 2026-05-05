@@ -5,7 +5,7 @@ import { COLORS, RADIUS, SPACING } from "@/constants/styles";
 export const controlStyles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: "transparent",
   },
   scrollContent: {
     paddingBottom: SPACING.xxl,
@@ -17,8 +17,7 @@ export const controlStyles = StyleSheet.create({
   },
   heroNumber: {
     fontFamily: "Inter_900Black",
-    fontSize: 56,
-    letterSpacing: -3,
+    fontSize: 72,
     fontVariant: ["tabular-nums"],
     color: COLORS.portalInk,
   },
