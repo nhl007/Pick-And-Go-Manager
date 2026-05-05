@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     right: 0,
     zIndex: 50,
     alignItems: "center",
-    paddingHorizontal: 16,
+    paddingHorizontal: 24,
     borderBottomWidth: 1,
     borderColor: COLORS.tabBarIconInactive,
   },
