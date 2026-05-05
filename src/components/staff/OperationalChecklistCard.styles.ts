@@ -1,0 +1,120 @@
+import { StyleSheet } from "react-native";
+
+import { COLORS, RADIUS, SPACING } from "@/constants/styles";
+
+export const operationalChecklistStyles = StyleSheet.create({
+  card: {
+    flex: 1,
+    minWidth: 0,
+    backgroundColor: COLORS.white,
+    borderRadius: RADIUS.lg,
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+    shadowColor: "#000000",
+    shadowOpacity: 0.05,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 2,
+  },
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: SPACING.sm,
+    marginBottom: SPACING.sm,
+  },
+  headerTitle: {
+    fontFamily: "Inter_800ExtraBold",
+    fontSize: 14,
+    textTransform: "uppercase",
+    color: COLORS.portalInk,
+    flexShrink: 1,
+  },
+  doneBadge: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 4,
+    borderRadius: RADIUS.full,
+    backgroundColor: "rgba(0,0,0,0.045)",
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+  },
+  doneBadgeTxt: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 10,
+    color: COLORS.ink2,
+    fontVariant: ["tabular-nums"],
+  },
+  progressRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: SPACING.sm,
+    marginBottom: SPACING.md,
+    marginTop: SPACING.sm 
+  },
+  progressTrack: {
+    flex: 1,
+    height: 7,
+    borderRadius: 3,
+    backgroundColor: "rgba(0,0,0,0.06)",
+    overflow: "hidden",
+  },
+  progressFill: {
+    height: "100%",
+    borderRadius: 4,
+    backgroundColor: COLORS.black,
+  },
+  progressPctTxt: {
+    fontFamily: "Inter_800ExtraBold",
+    fontSize: 14,
+    color: COLORS.black,
+    fontVariant: ["tabular-nums"],
+  },
+  taskItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: SPACING.md,
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.md,
+    borderRadius: RADIUS.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: COLORS.hairline,
+    backgroundColor: COLORS.white,
+    marginBottom: SPACING.sm,
+  },
+  taskItemDone: {
+    backgroundColor: "rgba(255, 229, 0, 0.10)",
+    borderColor: "rgba(255, 199, 0, 0.45)",
+  },
+  checkBox: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1.5,
+    borderColor: COLORS.hairline,
+    backgroundColor: COLORS.white,
+    flexShrink: 0,
+  },
+  checkBoxDone: {
+    backgroundColor: COLORS.trendPositive,
+    borderColor: COLORS.trendPositive,
+  },
+  taskBody: {
+    flex: 1,
+    minWidth: 0,
+    gap: 4,
+  },
+  taskTitle: {
+    fontFamily: "Inter_700Bold",
+    fontSize: 14,
+    color: COLORS.portalInk,
+  },
+  taskMeta: {
+    fontFamily: "Inter_600SemiBold",
+    fontSize: 12,
+    color: COLORS.ink4,
+  },
+});

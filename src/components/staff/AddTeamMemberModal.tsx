@@ -308,7 +308,7 @@ export function AddTeamMemberModal({ visible, onClose, t }: AddTeamMemberModalPr
                   ? "staff.stepRole"
                   : "staff.stepAccess";
             return (
-              <React.Fragment key={n}>
+              <View key={n}>
                 <View style={{ alignItems: "center" }}>
                   <View
                     style={[
@@ -331,7 +331,7 @@ export function AddTeamMemberModal({ visible, onClose, t }: AddTeamMemberModalPr
                   </UiText>
                 </View>
                 {i < 2 && <View style={a.stepConnector} />}
-              </React.Fragment>
+              </View>
             );
           })}
         </View>

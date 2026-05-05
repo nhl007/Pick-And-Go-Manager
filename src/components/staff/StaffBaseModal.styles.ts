@@ -48,6 +48,13 @@ export const staffBaseModalStyles = StyleSheet.create({
     borderRadius: 3,
     backgroundColor: COLORS.neonOrange,
   },
+  modalDivider: {
+  height: 1,
+  width: "100%",
+  // backgroundColor: "#E5E7EB",
+  marginTop: 10,
+  marginBottom: 8
+},
   modalBadgeTxt: {
     fontFamily: "Inter_800ExtraBold",
     fontSize: 9,
