@@ -351,7 +351,7 @@ export default function FinanceScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: "transparent",
   },
   scroll: {
     flex: 1,
