@@ -1,4 +1,5 @@
 import { CONTROL_AR, CONTROL_EN } from "./control.translations";
+import { MEDIA_AR, MEDIA_EN } from "./media.translations";
 
 export const SUPPORTED_LANGUAGES = ["en", "ar"] as const;
 
@@ -209,6 +210,7 @@ export const resources = {
         unitMinuteShort: "M",
         unitSecondShort: "S",
       },
+      media: MEDIA_EN,
       staff: {
         heroProjected: "18",
         brandName: "French Bakery",
@@ -277,7 +279,8 @@ export const resources = {
         admin: "admin",
 
         addMemberTitle: "Add team member",
-        addMemberSubtitle: "Onboard a new staff member to French Bakery · Dubai Downtown.",
+        addMemberSubtitle:
+          "Onboard a new staff member to French Bakery · Dubai Downtown.",
         stepProfile: "Profile",
         stepRole: "Role",
         stepAccess: "Access",
@@ -331,7 +334,8 @@ export const resources = {
         accessBasicTitle: "Basic access",
         accessBasicDesc: "Clock in/out, view assigned tasks, and receive shift updates.",
         accessStandardTitle: "Standard access",
-        accessStandardDesc: "Includes basic access plus order view and daily performance.",
+        accessStandardDesc:
+          "Includes basic access plus order view and daily performance.",
         accessAdvancedTitle: "Advanced access",
         accessAdvancedDesc: "Manage team workflow, update statuses, and assign stations.",
         accessAdminTitle: "Admin access",
@@ -381,8 +385,7 @@ export const resources = {
         footerEntity: "Entity financial tech solutions",
         footerGeo: "المملكة المتحدة · الإمارات · الولايات المتحدة",
         forgotPasswordTitle: "نسيت كلمة المرور",
-        forgotPasswordSubtitle:
-          "أدخل بريد العمل أو رقم الهاتف وسنرسل لك رمز التحقق.",
+        forgotPasswordSubtitle: "أدخل بريد العمل أو رقم الهاتف وسنرسل لك رمز التحقق.",
         sendCode: "إرسال رمز التحقق",
         backToSignIn: "العودة لتسجيل الدخول",
         verificationTitle: "تحقق من الحساب",
@@ -402,8 +405,7 @@ export const resources = {
         passwordMismatchError: "كلمتا المرور غير متطابقتين.",
         passwordPolicyError: "يرجى استيفاء جميع متطلبات كلمة المرور قبل المتابعة.",
         recoveryResetTitle: "إعادة تعيين كلمة المرور",
-        recoveryResetDesc:
-          "أدخل بريدك الإلكتروني أو رقم واتساب. سنرسل لك رمز التحقق.",
+        recoveryResetDesc: "أدخل بريدك الإلكتروني أو رقم واتساب. سنرسل لك رمز التحقق.",
         recoveryEmailOrWhatsappShort: "البريد الإلكتروني أو رقم واتساب",
         recoveryForgotContactPlaceholder: "jon@french-bakery.ae",
         recoveryVerifyTitle: "أدخل رمز التحقق",
@@ -555,6 +557,7 @@ export const resources = {
         unitMinuteShort: "د",
         unitSecondShort: "ث",
       },
+      media: MEDIA_AR,
       staff: {
         heroProjected: "18",
         brandName: "المخبز الفرنسي",
@@ -675,7 +678,8 @@ export const resources = {
         roleManager: "مدير",
         accessLevelLabel: "مستوى الصلاحية",
         accessBasicTitle: "صلاحية أساسية",
-        accessBasicDesc: "تسجيل حضور/انصراف، عرض المهام المعيّنة، واستلام تحديثات الوردية.",
+        accessBasicDesc:
+          "تسجيل حضور/انصراف، عرض المهام المعيّنة، واستلام تحديثات الوردية.",
         accessStandardTitle: "صلاحية قياسية",
         accessStandardDesc: "تشمل الصلاحية الأساسية بالإضافة لعرض الطلبات وأداء اليوم.",
         accessAdvancedTitle: "صلاحية متقدمة",
