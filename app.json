@@ -4,19 +4,19 @@
     "slug": "pick-and-go",
     "version": "1.0.0",
     "orientation": "landscape",
-    "icon": "./assets/images/logo-secondary.png",
+    "icon": "./assets/images/appIcon.png",
     "scheme": "pickandgo",
     "userInterfaceStyle": "automatic",
     "backgroundColor": "#F5F5F5",
     "ios": {
-      "icon": "./assets/images/logo-secondary.png",
+      "icon": "./assets/images/appIcon.png",
       "supportsTablet": true,
       "requireFullScreen": true
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#F5F5F5",
-        "foregroundImage": "./assets/images/logo-secondary.png"
+        "foregroundImage": "./assets/images/appIcon.png"
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.nhl007.pickandgo"
@@ -32,7 +32,7 @@
         {
           "backgroundColor": "#F5F5F5",
           "android": {
-            "image": "./assets/images/logo-secondary.png",
+            "image": "./assets/images/appIcon.png",
             "imageWidth": 100
           }
         }
