@@ -86,7 +86,7 @@ export default function LiveIntelligenceScreen() {
           <View style={styles.heroDisplay}>
             <View style={[styles.heroAmountRow, isRtl && styles.rowRtl]}>
               <View style={styles.heroCurrency}>
-                <UiDirhamSymbol size={48} color={COLORS.portalInk} />
+                <UiDirhamSymbol size={72} color={COLORS.portalInk} />
               </View>
               <UiText style={styles.heroNumber} numberOfLines={1} adjustsFontSizeToFit>
                 {t("intelligence.heroProjected")}
@@ -206,7 +206,7 @@ export default function LiveIntelligenceScreen() {
             metaRight={t("intelligence.salesMeta")}
             value={
               <View style={[styles.finBigRow, isRtl && styles.rowRtl]}>
-                <UiDirhamSymbol size={22} color={COLORS.portalInk} />
+                <UiDirhamSymbol size={28} color={COLORS.portalInk} />
                 <UiText style={styles.metricBigXl}>{t("intelligence.salesValue")}</UiText>
               </View>
             }
@@ -228,7 +228,7 @@ export default function LiveIntelligenceScreen() {
             metaRight={t("intelligence.projectedCardMeta")}
             value={
               <View style={[styles.finBigRow, isRtl && styles.rowRtl]}>
-                <UiDirhamSymbol size={22} color={COLORS.portalInk} />
+                <UiDirhamSymbol size={28} color={COLORS.portalInk} />
                 <UiText style={styles.metricBigXl}>
                   {t("intelligence.projectedCardValue")}
                 </UiText>
