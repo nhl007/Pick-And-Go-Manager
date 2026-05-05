@@ -5,7 +5,7 @@ import { COLORS, FONT_FAMILIES, RADIUS, SPACING } from "@/constants/styles";
 export const staffStyles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: COLORS.surfaceCanvas,
+    // backgroundColor: COLORS.surfaceCanvas,
   },
   scrollContent: {
     paddingBottom: SPACING.xxl,
@@ -171,7 +171,7 @@ export const staffStyles = StyleSheet.create({
   sectionTitle: {
     fontFamily: "Inter_800ExtraBold",
     color: COLORS.portalInk,
-    marginRight: 12
+    marginRight: 12,
   },
   sectionCaption: {
     flex: 1,
@@ -307,7 +307,7 @@ export const staffStyles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 14,
     color: COLORS.ink4,
-    marginTop: 4
+    marginTop: 4,
   },
   initialsStack: {
     flexDirection: "row",
@@ -368,7 +368,7 @@ export const staffStyles = StyleSheet.create({
     paddingHorizontal: SPACING.sm,
     paddingVertical: 3,
     borderRadius: RADIUS.full,
-    borderColor: COLORS.ink3
+    borderColor: COLORS.ink3,
   },
   trophyText: {
     fontFamily: "Inter_800ExtraBold",
@@ -462,7 +462,7 @@ export const staffStyles = StyleSheet.create({
     lineHeight: 16,
     color: COLORS.ink4,
     width: 580,
-    marginTop: 4
+    marginTop: 4,
   },
   roleIconsRow: {
     flexDirection: "row",
