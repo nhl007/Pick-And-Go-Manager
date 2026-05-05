@@ -15,6 +15,8 @@ type HeroProps = {
   titleStrong: string;
   subtitle: string;
   locale: "ar-AE" | "en-GB";
+  /** Renders between the meta row and the divider (e.g. Media Hub `display-sub`). */
+  belowMeta?: React.ReactNode;
 };
 
 export default function Hero({
@@ -26,6 +28,7 @@ export default function Hero({
   titleStrong,
   subtitle,
   locale,
+  belowMeta,
 }: HeroProps) {
   const now = useNowTicker();
 
@@ -64,6 +67,8 @@ export default function Hero({
           <UiText style={styles.metaDate}>{dateLine}</UiText>
         </View>
       </View>
+
+      {belowMeta}
 
       <View style={styles.divider} />
 
