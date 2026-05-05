@@ -8,7 +8,6 @@ export function AuthScreenBackdrop() {
     <View style={styles.backgroundLayer}>
       <View style={styles.blobTop} />
       <View style={styles.blobBottom} />
-      <View style={styles.gridDecoration} />
     </View>
   );
 }
