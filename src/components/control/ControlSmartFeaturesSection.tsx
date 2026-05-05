@@ -41,14 +41,7 @@ export function ControlSmartFeaturesSection({
         <UICard style={controlStyles.g3Item}>
           <ControlSmartWeatherCard {...weather} />
         </UICard>
-        <UICard
-          style={[
-            controlStyles.g3Item,
-            {
-              backgroundColor: "rgb(255, 51, 85,0.1)",
-            },
-          ]}
-        >
+        <UICard style={[controlStyles.g3Item]}>
           <ControlSmartSosCard {...sos} />
         </UICard>
       </View>
