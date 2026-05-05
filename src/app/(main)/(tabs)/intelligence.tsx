@@ -365,8 +365,6 @@ export default function LiveIntelligenceScreen() {
           />
         </View>
       </View>
-
-      <View style={{ height: SPACING.xxl }} />
     </ScrollView>
   );
 }
