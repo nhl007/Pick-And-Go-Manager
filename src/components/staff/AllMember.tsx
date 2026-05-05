@@ -1,14 +1,13 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
+import type { TFunction } from "i18next";
 import React, { useMemo, useState } from "react";
 import { I18nManager, Pressable, TextInput, View } from "react-native";
 
 import { allMemberStyles as m } from "@/components/staff/AllMember.styles";
-import { staffBaseModalStyles as mb } from "@/components/staff/StaffBaseModal.styles";
 import { StaffBaseModal } from "@/components/staff/StaffBaseModal";
+import { staffBaseModalStyles as mb } from "@/components/staff/StaffBaseModal.styles";
 import { UiText } from "@/components/ui/UiText";
 import { COLORS } from "@/constants/styles";
-
-import type { TFunction } from "i18next";
 
 type StaffBucket = "all" | "onDuty" | "late" | "off";
 
@@ -133,7 +132,7 @@ export function AllStaffModal({ visible, onClose, onPressAddMember, t }: AllStaf
     return (
       <Pressable
         key={bucket}
-        onPress={() => setFilter(bucket)}
+        onPress={() => { setFilter(bucket); }}
         style={[m.filterPill, active && m.filterPillActive]}
       >
         <UiText style={[m.filterPillTxt, active && m.filterPillTxtActive]}>
