@@ -24,6 +24,8 @@ export const COLORS = {
 
   surfaceCanvas: "#EBEBEB",
   portalInk: "#0A0A0A",
+
+  inkWatermark: "rgba(10, 10, 10, 0.022)",
   ink2: "#444444",
   ink3: "#666666",
   ink4: "#888888",
@@ -34,7 +36,6 @@ export const COLORS = {
   trendPositiveDeep: "#8B6F00",
   neonOrange: "#FF8A00",
   neonYellow: "#FFE500",
-  /** Portal neon accent (HTML `--neon-red`) */
   neonRed: "#FF3355",
   chartWarm: "#FFB05E",
   chartSand: "#E5C6A8",
