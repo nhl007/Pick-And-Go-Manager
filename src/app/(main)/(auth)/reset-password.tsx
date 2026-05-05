@@ -272,7 +272,8 @@ const styles = StyleSheet.create({
   eye: {
     position: "absolute",
     right: SPACING.md,
-    top: 16,
+    top: "50%",
+    transform: [{ translateY: "-50%" }],
   },
   alignRight: {
     textAlign: "right",
