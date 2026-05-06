@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { I18nManager, ScrollView, Text, useWindowDimensions, View } from "react-native";
 
 import Hero from "@/components/Hero";
+import { UICard } from "@/components/ui/UICard";
 import { UiDirhamSymbol } from "@/components/ui/UiDirhamSymbol";
 import { UiLiveBlinkDot } from "@/components/ui/UiLiveBlinkDot";
 import { UiLiveHBarChart } from "@/components/ui/UiLiveHBarChart";
@@ -94,7 +95,7 @@ export default function LiveIntelligenceScreen() {
             </View>
           </View>
           <View style={[styles.metaMidRow, isRtl && styles.rowRtl]}>
-            <Ionicons name="time-outline" size={14} color={COLORS.accentAmber} />
+            <Ionicons name="moon-outline" size={14} color={COLORS.neonOrange} />
             <Text style={styles.metaMidText}>
               {t("intelligence.projectedLinePrefix")}
               <Text style={styles.metaMidStrong}>
@@ -245,7 +246,7 @@ export default function LiveIntelligenceScreen() {
           />
         </View>
 
-        <View style={styles.finThird}>
+        <UICard style={styles.finThird}>
           <View style={styles.finThirdTop}>
             <UiText style={styles.finThirdTitle}>
               {t("intelligence.liabilitiesTitle")}
@@ -266,12 +267,12 @@ export default function LiveIntelligenceScreen() {
             owedLabel={t("intelligence.owedLabel")}
             owedAmount={t("intelligence.owedValue")}
           />
-        </View>
+        </UICard>
       </View>
 
       <View style={styles.chartGrid}>
         <View style={styles.chartRow3}>
-          <View style={styles.chartPanel}>
+          <UICard style={styles.chartPanel}>
             <View style={styles.chartHead}>
               <UiText style={styles.chartTitle}>{t("intelligence.funnelTitle")}</UiText>
               <UiText style={styles.chartSub}>{t("intelligence.funnelSub")}</UiText>
@@ -291,9 +292,9 @@ export default function LiveIntelligenceScreen() {
                 </Text>
               }
             />
-          </View>
+          </UICard>
 
-          <View style={styles.chartPanel}>
+          <UICard style={styles.chartPanel}>
             <View style={styles.chartHead}>
               <UiText style={styles.chartTitle}>{t("intelligence.pickupTitle")}</UiText>
               <UiText style={styles.chartSub}>{t("intelligence.pickupSub")}</UiText>
@@ -313,9 +314,9 @@ export default function LiveIntelligenceScreen() {
                 {t("intelligence.pickupLegStore", { pct: 38 })}
               </UiText>
             </View>
-          </View>
+          </UICard>
 
-          <View style={styles.chartPanel}>
+          <UICard style={styles.chartPanel}>
             <View style={styles.chartHead}>
               <UiText style={styles.chartTitle}>{t("intelligence.autopickTitle")}</UiText>
               <UiText style={styles.chartSub}>{t("intelligence.autopickSub")}</UiText>
@@ -336,7 +337,7 @@ export default function LiveIntelligenceScreen() {
                 <Text style={styles.legendOk}>{t("intelligence.autopickNewWord")}</Text>
               </Text>
             </View>
-          </View>
+          </UICard>
         </View>
 
         <View style={styles.chartRow2}>
