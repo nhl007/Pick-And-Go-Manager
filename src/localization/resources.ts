@@ -2,6 +2,10 @@ import {
   staffTranslationsAr,
   staffTranslationsEn,
 } from "@/localization/staff.translations";
+import {
+  tierTranslationsAr,
+  tierTranslationsEn,
+} from "@/localization/tier.translations";
 
 import { CONCIERGE_AR, CONCIERGE_EN } from "./concierge.translations";
 import { CONTROL_AR, CONTROL_EN } from "./control.translations";
@@ -221,6 +225,7 @@ export const resources = {
       },
       settings: SETTINGS_EN,
       staff: staffTranslationsEn,
+      tier: tierTranslationsEn,
     },
   },
   ar: {
@@ -423,6 +428,7 @@ export const resources = {
       },
       settings: SETTINGS_AR,
       staff: staffTranslationsAr,
+      tier: tierTranslationsAr,
     },
   },
 };
