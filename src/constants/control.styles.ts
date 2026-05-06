@@ -44,7 +44,7 @@ export const controlStyles = StyleSheet.create({
   },
   metaMidStrong: {
     fontFamily: "Inter_800ExtraBold",
-    color: COLORS.trendPositiveDeep,
+    color: COLORS.neonOrange,
   },
   metaMidInk: {
     fontFamily: "Inter_800ExtraBold",
