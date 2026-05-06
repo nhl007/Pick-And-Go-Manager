@@ -44,7 +44,14 @@ export function UiLiveRingGauge({
       <View style={styles.gauge}>
         <Svg width={SIZE} height={SIZE} viewBox="0 0 100 100">
           <G transform={`rotate(-90 ${CX} ${CY})`}>
-            <Circle cx={CX} cy={CY} r={R} stroke="rgba(0,0,0,0.08)" strokeWidth={STROKE} fill="none" />
+            <Circle
+              cx={CX}
+              cy={CY}
+              r={R}
+              stroke="rgba(0,0,0,0.08)"
+              strokeWidth={STROKE}
+              fill="none"
+            />
             <Circle
               cx={CX}
               cy={CY}
@@ -60,14 +67,14 @@ export function UiLiveRingGauge({
         </Svg>
         <View style={styles.center} pointerEvents="none">
           <View style={styles.pctRow}>
-            <UiText size={30} font="black" color="neonOrange">
+            <UiText size={28} font="black" color="neonOrange">
               {pctLabel}
             </UiText>
-            <UiText size={30} font="black" color="neonOrange">
+            <UiText size={28} font="black" color="neonOrange">
               %
             </UiText>
           </View>
-          <UiText size={9} font="bold" color="ink4" style={styles.centerLbl}>
+          <UiText size={7} font="bold" color="ink4" style={styles.centerLbl}>
             {ringCaption}
           </UiText>
         </View>
