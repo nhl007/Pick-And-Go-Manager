@@ -19,8 +19,6 @@ const MS_HOUR = 3_600_000;
 const MS_MIN = 60_000;
 const MS_SEC = 1000;
 
-const PAYOUT_RING_GOLD = "#FFD000";
-
 type TransactionRow = {
   id: string;
   title: string;
@@ -201,7 +199,9 @@ export default function FinanceScreen() {
               />
               <UiText style={styles.metaMidText}>
                 {t("financePage.availableBalancePrefix")}
-                <UiText style={styles.metaMidStrong}>{" +Ð8,427 today"}</UiText>
+                <UiText style={styles.metaMidStrong} size="xs">
+                  {" +Ð8,427 today"}
+                </UiText>
               </UiText>
             </View>
             <View style={styles.metaMidRow}>
@@ -329,7 +329,7 @@ export default function FinanceScreen() {
               <UiLiveSemiGauge
                 percent={75}
                 size={240}
-                strokeColor={PAYOUT_RING_GOLD}
+                strokeColor={COLORS.neonOrange}
                 centerMain={payoutGauge.centerMain}
                 centerMainSuffix={t("financePage.unitDayShort")}
                 centerSub={payoutGauge.centerSub}
@@ -364,7 +364,6 @@ const styles = StyleSheet.create({
   },
   heroDisplay: {
     alignItems: "center",
-    marginTop: SPACING.sm,
     marginBottom: 4,
   },
   heroAmountRow: {
@@ -378,7 +377,7 @@ const styles = StyleSheet.create({
   },
   heroNumber: {
     fontFamily: "Inter_900Black",
-    fontSize: 56,
+    fontSize: 72,
     letterSpacing: -3,
     fontVariant: ["tabular-nums"],
     color: COLORS.portalInk,
