@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
   },
   metaMidStrong: {
     fontFamily: "Inter_800ExtraBold",
-    color: COLORS.trendPositiveDeep,
+    color: COLORS.neonOrange,
   },
   metaMidSmall: {
     fontFamily: "Inter_600SemiBold",
@@ -201,7 +201,7 @@ export const styles = StyleSheet.create({
   },
   metricBigXl: {
     fontFamily: "Inter_900Black",
-    fontSize: 28,
+    fontSize: 32,
     letterSpacing: -0.6,
     fontVariant: ["tabular-nums"],
     color: COLORS.portalInk,
@@ -269,24 +269,17 @@ export const styles = StyleSheet.create({
   finCardWrap: {
     flexGrow: 1,
     flexBasis: "31%",
-    minWidth: 260,
+    minWidth: 240,
     alignSelf: "stretch",
   },
   finCardEqualHeight: {
     flex: 1,
   },
   finThird: {
-    flex: 1,
     flexBasis: "31%",
-    minWidth: 260,
+    minWidth: 240,
     alignSelf: "stretch",
     justifyContent: "space-between",
-    backgroundColor: COLORS.white,
-    borderRadius: RADIUS.md,
-    padding: SPACING.md,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: COLORS.hairline,
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   },
   finThirdTop: {
     flexDirection: "row",
@@ -330,12 +323,6 @@ export const styles = StyleSheet.create({
     flexGrow: 1,
     flexBasis: "31%",
     minWidth: 240,
-    backgroundColor: COLORS.white,
-    borderRadius: 16,
-    padding: 14,
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: COLORS.hairline,
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   },
   chartHead: {
     marginBottom: 8,
@@ -381,7 +368,7 @@ export const styles = StyleSheet.create({
   },
   legendOk: {
     fontFamily: "Inter_800ExtraBold",
-    color: COLORS.trendPositiveDeep,
+    color: COLORS.neonOrange,
   },
   legendRight: {
     textAlign: "right",
@@ -394,7 +381,7 @@ export const styles = StyleSheet.create({
   },
   peakHeroMetaHi: {
     fontFamily: "Inter_800ExtraBold",
-    color: COLORS.trendPositiveDeep,
+    color: COLORS.neonOrange,
   },
   rowRtl: {
     flexDirection: "row-reverse",
