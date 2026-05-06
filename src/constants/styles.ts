@@ -4,6 +4,16 @@ export const COLORS = {
   primary: "#4F46E5",
   secondary: "#22C55E",
 
+  background: "#F5F5F5",
+  backgroundSecondary: "#EEEEEE",
+
+  textPrimary: "#111827",
+  textSecondary: "#6B7280",
+  textInput: "rgba(10, 10, 10, 0.50)",
+
+  border: "#E5E7EB",
+  borderInput: "#D1D5DC",
+
   white: "#FFFFFF",
   whiteSecondary: "#F8F8F8",
   whiteTertiary: "#FFFFFF1A",
@@ -13,14 +23,6 @@ export const COLORS = {
   blackTertiary: "rgba(0, 0, 0, 0.05)",
 
   gray: "#141C24",
-
-  background: "#F5F5F5",
-  backgroundSecondary: "#EEEEEE",
-
-  textPrimary: "#111827",
-  textSecondary: "#6B7280",
-
-  border: "#E5E7EB",
 
   surfaceCanvas: "#EBEBEB",
   portalInk: "#0A0A0A",
@@ -36,15 +38,15 @@ export const COLORS = {
   trendPositiveDeep: "#8B6F00",
   neonOrange: "#FF8A00",
   neonYellow: "#FFE500",
-  neonRed: "#FF3355",
+  neonRed: "#FF0000",
   chartWarm: "#FFB05E",
   chartSand: "#E5C6A8",
   chartSilver: "#CFCFCF",
   chartMist: "#E0E0E0",
   warmOrange: "#FF9500",
 
-  error: "#EF4444",
-  cancel: "#FF4242",
+  error: "#FF1744",
+  cancel: "#FF3355",
 
   tabBarSurface: "#000000",
   tabBarActivePill: "#FFFFFF",
@@ -57,6 +59,23 @@ export const COLORS = {
   financeAccent: "#CA8A04",
   financeOrange: "#EA580C",
   financeRose: "#F43F5E",
+
+  /** Help / tech support accent (sky) */
+  sky500: "#0EA5E9",
+
+  /** Settings — merged identity dark card */
+  settingsIdentityBg: "#0F172A",
+  settingsIdentityBorder: "rgba(148, 163, 184, 0.22)",
+
+  /** Muted slate badge (e.g. Encrypted) */
+  slateBadgeBg: "rgba(100, 116, 139, 0.1)",
+  slateBadgeText: "#475569",
+  slateBadgeBorder: "rgba(100, 116, 139, 0.2)",
+
+  /** Password strength pill */
+  strengthBadgeBg: "rgba(255, 229, 0, 0.12)",
+  strengthBadgeText: "#B8500A",
+  strengthBadgeBorder: "rgba(255, 229, 0, 0.25)",
 };
 
 export const FONT_FAMILIES = {
