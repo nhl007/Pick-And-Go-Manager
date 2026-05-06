@@ -32,7 +32,7 @@ export function UiInput({
       style={[
         styles.container,
         containerStyle,
-        { borderColor: isFocused ? COLORS.black : COLORS.border },
+        { borderColor: isFocused ? COLORS.black : COLORS.borderInput },
       ]}
     >
       {logo && <View style={styles.logoContainer}>{logo}</View>}
@@ -43,7 +43,7 @@ export function UiInput({
         onBlur={() => {
           setIsFocused(false);
         }}
-        placeholderTextColor={COLORS.textPrimary}
+        placeholderTextColor={COLORS.textInput}
         {...textInputProps}
         style={[
           styles.input,
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
-    backgroundColor: COLORS.whiteSecondary,
+    borderWidth: 1.5,
+    borderColor: COLORS.borderInput,
     borderRadius: RADIUS.md,
     paddingHorizontal: SPACING.md,
   },
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "stretch",
     minHeight: 0,
-    color: COLORS.textPrimary,
+    color: COLORS.textInput,
     fontFamily: FONT_FAMILIES.regular,
     fontSize: FONT_SIZE.base,
   },
