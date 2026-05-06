@@ -2,6 +2,10 @@ import {
   staffTranslationsAr,
   staffTranslationsEn,
 } from "@/localization/staff.translations";
+import {
+  tierTranslationsAr,
+  tierTranslationsEn,
+} from "@/localization/tier.translations";
 
 import { CONTROL_AR, CONTROL_EN } from "./control.translations";
 import { MEDIA_AR, MEDIA_EN } from "./media.translations";
@@ -217,6 +221,7 @@ export const resources = {
         unitSecondShort: "S",
       },
       staff: staffTranslationsEn,
+      tier: tierTranslationsEn,
     },
   },
   ar: {
@@ -418,6 +423,7 @@ export const resources = {
       },
 
       staff: staffTranslationsAr,
+      tier: tierTranslationsAr,
     },
   },
 };
