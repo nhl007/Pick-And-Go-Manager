@@ -445,7 +445,7 @@ export const conciergeStyles = StyleSheet.create({
     backgroundColor: COLORS.chartMist,
   },
   stepDone: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: COLORS.neonOrange,
   },
   stepActive: {
     backgroundColor: COLORS.neonOrange,
@@ -662,7 +662,7 @@ export const conciergeStyles = StyleSheet.create({
   auditTag: {
     fontFamily: "Inter_800ExtraBold",
     fontSize: 11,
-    color: COLORS.secondary,
+    color: COLORS.neonOrange,
   },
   goal: { gap: 8, paddingVertical: SPACING.sm },
   goalHead: { flexDirection: "row", justifyContent: "space-between", gap: 10 },
