@@ -6,6 +6,7 @@ import {
 import { CONCIERGE_AR, CONCIERGE_EN } from "./concierge.translations";
 import { CONTROL_AR, CONTROL_EN } from "./control.translations";
 import { MEDIA_AR, MEDIA_EN } from "./media.translations";
+import { SETTINGS_AR, SETTINGS_EN } from "./settings.translations";
 
 export const SUPPORTED_LANGUAGES = ["en", "ar"] as const;
 
@@ -218,6 +219,7 @@ export const resources = {
         unitMinuteShort: "M",
         unitSecondShort: "S",
       },
+      settings: SETTINGS_EN,
       staff: staffTranslationsEn,
     },
   },
@@ -419,7 +421,7 @@ export const resources = {
         unitMinuteShort: "د",
         unitSecondShort: "ث",
       },
-
+      settings: SETTINGS_AR,
       staff: staffTranslationsAr,
     },
   },
