@@ -60,7 +60,7 @@ export const mediaStyles = StyleSheet.create({
     fontSize: 9,
     letterSpacing: 0.5,
     textTransform: "uppercase",
-    color: COLORS.secondary,
+    color: COLORS.neonOrange,
   },
   liveDot: {
     width: 6,
@@ -95,7 +95,7 @@ export const mediaStyles = StyleSheet.create({
     fontFamily: "Inter_800ExtraBold",
     fontSize: 9,
     letterSpacing: 0.3,
-    color: COLORS.trendPositiveDeep,
+    color: COLORS.neonOrange,
   },
   heroEmpty: {
     alignItems: "center",
@@ -722,7 +722,7 @@ export const mediaStyles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: COLORS.secondary,
+    backgroundColor: COLORS.neonOrange,
   },
   crSkip: {
     width: 32,
