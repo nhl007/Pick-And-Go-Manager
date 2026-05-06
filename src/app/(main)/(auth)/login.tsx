@@ -99,7 +99,7 @@ export default function LoginScreen() {
                 </UiText>
                 <UiInput
                   height={48}
-                  logo={<MailIcon color={COLORS.textSecondary} />}
+                  logo={<MailIcon width={20} height={20} color={COLORS.textInput} />}
                   autoCapitalize="none"
                   autoCorrect={false}
                   autoComplete="username"
@@ -107,7 +107,6 @@ export default function LoginScreen() {
                   onChangeText={setEmailOrPhone}
                   editable={!isPending}
                   placeholder={t("auth.emailOrPhonePlaceholder")}
-                  placeholderTextColor={COLORS.textSecondary}
                   style={[isRtl && styles.alignRight]}
                 />
               </View>
@@ -123,7 +122,7 @@ export default function LoginScreen() {
               <View style={styles.passwordInputWrapper}>
                 <UiInput
                   height={48}
-                  logo={<LockIcon color={COLORS.textSecondary} />}
+                  logo={<LockIcon width={20} height={20} color={COLORS.textInput} />}
                   autoCapitalize="none"
                   autoCorrect={false}
                   autoComplete="current-password"
@@ -132,7 +131,6 @@ export default function LoginScreen() {
                   onChangeText={setPassword}
                   editable={!isPending}
                   placeholder={t("auth.passwordPlaceholder")}
-                  placeholderTextColor={COLORS.textSecondary}
                   style={[isRtl && styles.alignRight]}
                 />
                 <Pressable
@@ -146,7 +144,7 @@ export default function LoginScreen() {
                     <Ionicons
                       name={showPassword ? "eye-off" : "eye"}
                       size={24}
-                      color={COLORS.textSecondary}
+                      color={COLORS.textInput}
                     />
                   </UiText>
                 </Pressable>
@@ -220,7 +218,6 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "transparent",
   },
   keyboardRoot: {
     flex: 1,
@@ -299,11 +296,10 @@ const styles = StyleSheet.create({
   },
   passwordInputWrapper: {
     position: "relative",
-    paddingRight: SPACING.sm,
   },
   trailingAction: {
     position: "absolute",
-    right: 32,
+    right: 16,
     top: "50%",
     transform: [{ translateY: -10 }],
   },
@@ -332,8 +328,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   checkboxActive: {
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.primary,
+    backgroundColor: COLORS.black,
+    borderColor: COLORS.border,
   },
   checkboxTick: {
     color: COLORS.white,
@@ -347,13 +343,13 @@ const styles = StyleSheet.create({
   },
   forgotText: {
     fontFamily: FONT_FAMILIES.medium,
-    color: COLORS.primary,
+    color: COLORS.black,
     fontSize: FONT_SIZE.sm,
   },
   primaryButton: {
     marginTop: SPACING.sm,
     borderColor: COLORS.black,
-    borderWidth: 1,
+    borderWidth: 1.5,
   },
   primaryButtonDisabled: {
     opacity: 0.7,
