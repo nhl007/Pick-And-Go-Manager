@@ -39,7 +39,7 @@ export default function ReservationCard({
           <Image source={reservation.image} style={styles.thumbnail} contentFit="cover" />
           <View style={styles.topInfo}>
             <View style={styles.nameRow}>
-              <UiText font="semibold" size="lg" color="black" numberOfLines={1} style={styles.title}>
+              <UiText font="semiBold" size="lg" color="black" numberOfLines={1} style={styles.title}>
                 {reservation.restaurantName}
               </UiText>
               <View style={[styles.statusBadge, { backgroundColor: statusStyle.bg, borderColor: statusStyle.border }]}>
@@ -107,10 +107,10 @@ export default function ReservationCard({
           </View>
           {onPress && (
             <Pressable onPress={onPress} style={styles.viewDetailsBtn}>
-              <UiText font="semibold" size="sm" color="black">
+              <UiText font="semiBold" size="sm" color="black">
                 View Details
               </UiText>
-              <UiText font="semibold" size="sm" color="black">
+              <UiText font="semiBold" size="sm" color="black">
                 {" >"}
               </UiText>
             </Pressable>
