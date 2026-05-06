@@ -15,8 +15,12 @@ type HeroProps = {
   titleStrong: string;
   subtitle: string;
   locale: "ar-AE" | "en-GB";
+  /** Renders above the meta row (e.g. Settings hero avatar). */
+  aboveMeta?: React.ReactNode;
   /** Renders between the meta row and the divider (e.g. Media Hub `display-sub`). */
   belowMeta?: React.ReactNode;
+  /** Renders at the end of the page heading row (e.g. Settings language pill). */
+  pgHeadAccessory?: React.ReactNode;
 };
 
 export default function Hero({
@@ -28,7 +32,9 @@ export default function Hero({
   titleStrong,
   subtitle,
   locale,
+  aboveMeta,
   belowMeta,
+  pgHeadAccessory,
 }: HeroProps) {
   const now = useNowTicker();
 
@@ -78,6 +84,9 @@ export default function Hero({
           <UiText style={styles.h1Strong}>{titleStrong}</UiText>
         </View>
         <UiText style={styles.tag}>{subtitle}</UiText>
+        {pgHeadAccessory ? (
+          <View style={styles.pgHeadAccessorySlot}>{pgHeadAccessory}</View>
+        ) : null}
       </View>
     </>
   );
@@ -205,6 +214,10 @@ const styles = StyleSheet.create({
     letterSpacing: -0.6,
     lineHeight: 38,
     color: COLORS.portalInk,
+  },
+  pgHeadAccessorySlot: {
+    flexShrink: 0,
+    alignSelf: "flex-start",
   },
   tag: {
     flex: 1,
