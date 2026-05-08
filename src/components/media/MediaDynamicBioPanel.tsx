@@ -58,7 +58,7 @@ export function MediaDynamicBioPanel({
       <UiText style={controlStyles.panelTitle}>{title}</UiText>
       <TextInput
         value={bio}
-        onChangeText={(t) => onBioChange(t.slice(0, BIO_MAX))}
+        onChangeText={(t) => { onBioChange(t.slice(0, BIO_MAX)); }}
         multiline
         maxLength={BIO_MAX}
         style={mediaStyles.bioArea}

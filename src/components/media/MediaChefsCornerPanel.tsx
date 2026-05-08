@@ -81,7 +81,7 @@ export function MediaChefsCornerPanel({
       </View>
       <TextInput
         value={message}
-        onChangeText={(t) => onMessageChange(t.slice(0, MSG_MAX))}
+        onChangeText={(t) => { onMessageChange(t.slice(0, MSG_MAX)); }}
         multiline
         maxLength={MSG_MAX}
         style={mediaStyles.chefMsg}

@@ -41,7 +41,7 @@ export function MediaStatusOverlayPanel({
       <View style={mediaStyles.statusInputWrap}>
         <TextInput
           value={value}
-          onChangeText={(t) => onChange(t.slice(0, STATUS_MAX))}
+          onChangeText={(t) => { onChange(t.slice(0, STATUS_MAX)); }}
           maxLength={STATUS_MAX}
           style={mediaStyles.statusInput}
           placeholderTextColor={COLORS.ink4}
