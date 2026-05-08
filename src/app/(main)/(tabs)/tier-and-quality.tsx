@@ -248,14 +248,14 @@ export default function TierAndQualityScreen() {
         />
       </View>
 
-      {/* <View style={[styles.privilegesHeadRow, isRtl && styles.rowRtl]}>
+      <View style={[styles.privilegesHeadRow, isRtl && styles.rowRtl]}>
         <UiText style={styles.sectionTitle}>{t("tier.privilegesTitle")}</UiText>
         <UiText style={styles.sectionCaption}>{t("tier.privilegesCaption")}</UiText>
       </View>
 
-      <TierPrivilegesTable currentTier={CURRENT_TIER} t={t} /> */}
+      <TierPrivilegesTable currentTier={CURRENT_TIER} t={t} />
 
-      {/* <View style={[styles.smartHeadRow, isRtl && styles.rowRtl]}>
+      <View style={[styles.smartHeadRow, isRtl && styles.rowRtl]}>
         <UiText style={styles.sectionTitle}>{t("tier.smartTitle")}</UiText>
         <UiText style={styles.sectionCaption}>{t("tier.smartCaption")}</UiText>
       </View>
@@ -270,7 +270,7 @@ export default function TierAndQualityScreen() {
         <View style={styles.smartCardWrap}>
           <TierPeerBenchmarkCard t={t} />
         </View>
-      </View> */}
+      </View>
 
       <View style={{ height: SPACING.xxl }} />
 
