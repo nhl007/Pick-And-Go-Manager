@@ -228,10 +228,44 @@ export const resources = {
       tier: tierTranslationsEn,
       searchModal: {
         placeholder: "Search orders, menu items, customers, insights…",
+        closeBackdropHint: "Dismiss search",
         esc: "ESC",
         quickActions: "Quick actions",
         recentSearches: "Recent searches",
         jumpToSection: "Jump to section",
+        resultsLabel: "Results",
+        mockItems: {
+          order2910: {
+            title: "Order #2910",
+            subtitle: "Omar H. · Preparing · Rider 4 min away",
+            right: "Orders",
+          },
+          shakshuka: {
+            title: "Shakshuka Breakfast Bowl",
+            subtitle: "Menu · AED 32 · 42 orders today",
+            right: "Menu",
+          },
+          customerLayan: {
+            title: "Layan Al Mansoori",
+            subtitle: "Customer · 18 orders · Gold tier",
+            right: "Customers",
+          },
+          peakInsight: {
+            title: "Friday dinner peak +22%",
+            subtitle: "Insight · last 4 weeks vs baseline",
+            right: "Insights",
+          },
+          staffRoles: {
+            title: "Staff roles & privileges",
+            subtitle: "Open branch manager permissions",
+            right: "Staff",
+          },
+          mediaLibrary: {
+            title: "Media library · spring campaign",
+            subtitle: "12 assets · last updated today",
+            right: "Media",
+          },
+        },
         items: {
           logWaste: {
             title: "Log a Waste Item",
@@ -605,10 +639,44 @@ export const resources = {
       tier: tierTranslationsAr,
       searchModal: {
         placeholder: "ابحث عن الطلبات، عناصر القائمة، العملاء، الرؤى…",
+        closeBackdropHint: "إغلاق البحث",
         esc: "ESC",
         quickActions: "إجراءات سريعة",
         recentSearches: "عمليات بحث حديثة",
         jumpToSection: "انتقل إلى قسم",
+        resultsLabel: "النتائج",
+        mockItems: {
+          order2910: {
+            title: "طلب #2910",
+            subtitle: "عمر ح. · قيد التحضير · السائق خلال 4 د",
+            right: "الطلبات",
+          },
+          shakshuka: {
+            title: "وجبة شكشوكة إفطار",
+            subtitle: "قائمة · 32 AED · 42 طلبًا اليوم",
+            right: "القائمة",
+          },
+          customerLayan: {
+            title: "ليان المنصوري",
+            subtitle: "عميلة · 18 طلبًا · المستوى الذهبي",
+            right: "العملاء",
+          },
+          peakInsight: {
+            title: "ذروة عشاء الجمعة +22٪",
+            subtitle: "رؤية · آخر 4 أسابيع مقارنة بالأساس",
+            right: "الرؤى",
+          },
+          staffRoles: {
+            title: "أدوار الموظفين والصلاحيات",
+            subtitle: "فتح صلاحيات مدير الفرع",
+            right: "الموظفون",
+          },
+          mediaLibrary: {
+            title: "مكتبة الوسائط · حملة الربيع",
+            subtitle: "12 أصلًا · آخر تحديث اليوم",
+            right: "الوسائط",
+          },
+        },
         items: {
           logWaste: {
             title: "تسجيل عنصر هدر",
