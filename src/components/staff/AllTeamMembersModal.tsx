@@ -162,7 +162,7 @@ export function AllTeamMembersModal({
             return (
               <Pressable
                 key={f.id}
-                onPress={() => setFilter(f.id)}
+                onPress={() => { setFilter(f.id); }}
                 style={[s.filterPill, active && s.filterPillActive]}
               >
                 <UiText style={[s.filterPillTxt, active && s.filterPillTxtActive]}>

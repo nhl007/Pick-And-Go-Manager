@@ -243,7 +243,7 @@ export function PermissionMatrixModal({ visible, onClose, t }: PermissionMatrixM
                 <Pressable
                   key={role.id}
                   style={s.roleCell}
-                  onPress={() => cycleCell(perm.id, role.id)}
+                  onPress={() => { cycleCell(perm.id, role.id); }}
                   disabled={!editing}
                 >
                   <AccessChip level={level} editing={editing} />

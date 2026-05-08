@@ -106,7 +106,7 @@ export function RoleManagementSystemCard({ t }: RoleManagementSystemCardProps) {
         <UiText style={s.headerTitle} numberOfLines={1}>
           {t("staff.roleSystemTitle")}
         </UiText>
-        <Pressable hitSlop={6} onPress={() => setPermissionMatrixOpen(true)}>
+        <Pressable hitSlop={6} onPress={() => { setPermissionMatrixOpen(true); }}>
           <UiText style={s.headerLink} font="bold">{t("staff.permissionMatrix")} →</UiText>
         </Pressable>
       </View>
@@ -156,7 +156,7 @@ export function RoleManagementSystemCard({ t }: RoleManagementSystemCardProps) {
         return (
           <Pressable
   key={shift.id}
-  onPress={() => setSelectedShift(shift.id)}
+  onPress={() => { setSelectedShift(shift.id); }}
   style={({ hovered }) => [
     s.rowItem,
     hovered && { borderColor: "#000" }
@@ -199,7 +199,7 @@ export function RoleManagementSystemCard({ t }: RoleManagementSystemCardProps) {
       {TASK_LISTS.map((task) => (
         <Pressable
           key={task.id}
-          onPress={() => setSelectedTaskList(task.titleKey)}
+          onPress={() => { setSelectedTaskList(task.titleKey); }}
           style={s.rowItem}
         >
           <View style={s.rowIconWrap}>
@@ -250,20 +250,20 @@ export function RoleManagementSystemCard({ t }: RoleManagementSystemCardProps) {
 
       <ShiftDetailModal
         visible={selectedShift !== null}
-        onClose={() => setSelectedShift(null)}
+        onClose={() => { setSelectedShift(null); }}
         shiftKind={selectedShift}
         t={t}
       />
 
       <PermissionMatrixModal
         visible={permissionMatrixOpen}
-        onClose={() => setPermissionMatrixOpen(false)}
+        onClose={() => { setPermissionMatrixOpen(false); }}
         t={t}
       />
 
       <ActionConfirmationModal
         visible={selectedTaskList !== null}
-        onClose={() => setSelectedTaskList(null)}
+        onClose={() => { setSelectedTaskList(null); }}
         title={t("staff.taskListLoadingTitle")}
         bodyPrefix={t("staff.taskListLoadingBodyPrefix")}
         bodyBold={selectedTaskList ? t(selectedTaskList) : undefined}

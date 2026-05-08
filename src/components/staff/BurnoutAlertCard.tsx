@@ -80,14 +80,14 @@ export function BurnoutAlertCard({ t }: BurnoutAlertCardProps) {
         <Pressable style={s.ignoreBtn}>
           <UiText style={s.ignoreBtnTxt}>{t("staff.burnoutIgnore")}</UiText>
         </Pressable>
-        <Pressable style={s.rotateBtn} onPress={() => setRotateModalVisible(true)}>
+        <Pressable style={s.rotateBtn} onPress={() => { setRotateModalVisible(true); }}>
           <UiText style={s.rotateBtnTxt}>{t("staff.burnoutRotateTask")}</UiText>
         </Pressable>
       </View>
 
       <BurnoutRotateModal
         visible={rotateModalVisible}
-        onClose={() => setRotateModalVisible(false)}
+        onClose={() => { setRotateModalVisible(false); }}
         onConfirm={(station, duration) => {
           console.log("Rotate task confirmed:", { station, duration });
           // Handle the rotation confirmation here

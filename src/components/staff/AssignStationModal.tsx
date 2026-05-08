@@ -271,7 +271,7 @@ export function AssignStationModal({
               {filteredRecommended.map((member) => (
                 <Pressable
                   key={member.id}
-                  onPress={() => handleMemberPress(member)}
+                  onPress={() => { handleMemberPress(member); }}
                   style={s.memberRow}
                 >
                   <View style={s.memberIconWrap}>
@@ -307,7 +307,7 @@ export function AssignStationModal({
               {others.map((member) => (
                 <Pressable
                   key={member.id}
-                  onPress={() => handleMemberPress(member)}
+                  onPress={() => { handleMemberPress(member); }}
                   style={s.memberRow}
                 >
                   <View style={s.memberIconWrap}>
@@ -343,7 +343,7 @@ export function AssignStationModal({
             {LOAD_OPTIONS.map((opt) => (
               <Pressable
                 key={opt.id}
-                onPress={() => setSelectedLoad(opt.id)}
+                onPress={() => { setSelectedLoad(opt.id); }}
                 style={[s.loadOption, selectedLoad === opt.id && s.loadOptionActive]}
               >
                 <View style={[s.loadOptionDot, loadOptionDotStyle(opt.id)]} />
@@ -357,19 +357,19 @@ export function AssignStationModal({
         <View style={s.stationToolsSection}>
           <UiText style={s.stationToolsTitle}>{t("staff.stationTools")}</UiText>
           <View style={s.stationToolsGrid}>
-            <Pressable style={s.toolBtn} onPress={() => handleToolPress("swap")}>
+            <Pressable style={s.toolBtn} onPress={() => { handleToolPress("swap"); }}>
               <Ionicons name="swap-horizontal-outline" size={16} color={COLORS.portalInk} />
               <UiText style={s.toolBtnTxt}>{t("staff.swapWithStation")}</UiText>
             </Pressable>
-            <Pressable style={s.toolBtn} onPress={() => handleToolPress("reinforce")}>
+            <Pressable style={s.toolBtn} onPress={() => { handleToolPress("reinforce"); }}>
               <Ionicons name="person-add-outline" size={16} color={COLORS.portalInk} />
               <UiText style={s.toolBtnTxt}>{t("staff.addReinforcement")}</UiText>
             </Pressable>
-            <Pressable style={s.toolBtn} onPress={() => handleToolPress("break")}>
+            <Pressable style={s.toolBtn} onPress={() => { handleToolPress("break"); }}>
               <Ionicons name="time-outline" size={16} color={COLORS.portalInk} />
               <UiText style={s.toolBtnTxt}>{t("staff.scheduleBreak")}</UiText>
             </Pressable>
-            <Pressable style={[s.toolBtn, s.toolBtnDanger]} onPress={() => handleToolPress("close")}>
+            <Pressable style={[s.toolBtn, s.toolBtnDanger]} onPress={() => { handleToolPress("close"); }}>
               <Ionicons name="ban-outline" size={16} color="rgb(220, 38, 38)" />
               <UiText style={[s.toolBtnTxt, s.toolBtnTxtDanger]}>{t("staff.closeStation")}</UiText>
             </Pressable>

@@ -157,7 +157,7 @@ export function PrepStationCard({ t, onAssign }: PrepStationCardProps) {
           return (
             <Pressable
               key={station.id}
-              onPress={() => handleStationPress(station)}
+              onPress={() => { handleStationPress(station); }}
               style={[s.stationItem, unassigned && s.stationItemUnassigned]}
             >
               <View style={s.stationTopRow}>
@@ -175,7 +175,7 @@ export function PrepStationCard({ t, onAssign }: PrepStationCardProps) {
               </View>
 
               {unassigned ? (
-                <Pressable onPress={() => handleAssignPress(station.id)} hitSlop={8} style={s.assigneeRow}>
+                <Pressable onPress={() => { handleAssignPress(station.id); }} hitSlop={8} style={s.assigneeRow}>
                   <View style={s.assigneeLeft}>
                     <View style={[s.avatarPill, s.avatarPillUnassigned]}>
                       <Ionicons name="add" size={14} color={COLORS.ink4} />

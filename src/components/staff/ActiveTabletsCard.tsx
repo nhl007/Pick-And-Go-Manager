@@ -73,7 +73,7 @@ export function ActiveTabletsCard({ t }: ActiveTabletsCardProps) {
             <Pressable
               hitSlop={6}
               style={s.logoutBtn}
-              onPress={() => setLoggedOutTablet(tablet)}
+              onPress={() => { setLoggedOutTablet(tablet); }}
             >
               <UiText style={s.logoutBtnTxt}>{t("staff.tabletLogout")}</UiText>
             </Pressable>
@@ -83,7 +83,7 @@ export function ActiveTabletsCard({ t }: ActiveTabletsCardProps) {
 
       <ActionConfirmationModal
         visible={loggedOutTablet !== null}
-        onClose={() => setLoggedOutTablet(null)}
+        onClose={() => { setLoggedOutTablet(null); }}
         icon="checkmark"
         title={t("staff.tabletLogoutConfirmTitle")}
         bodyPrefix={t("staff.tabletLogoutConfirmBodyPrefix", {

@@ -138,7 +138,7 @@ export function EditProfileModal({
             return (
               <Pressable
                 key={tile.id}
-                onPress={() => setAccess(tile.id)}
+                onPress={() => { setAccess(tile.id); }}
                 style={[s.accessTile, active && s.accessTileActive]}
               >
                 <UiText style={s.accessTileTitle}>{t(tile.titleKey)}</UiText>

@@ -419,7 +419,7 @@ export function AddTeamMemberModal({ visible, onClose, t }: AddTeamMemberModalPr
                       return (
                         <Pressable
                           key={r.id}
-                          onPress={() => setRoleId(r.id)}
+                          onPress={() => { setRoleId(r.id); }}
                           style={[a.roleTile, isActive && a.roleTileActive]}
                         >
                           <Ionicons
@@ -476,7 +476,7 @@ export function AddTeamMemberModal({ visible, onClose, t }: AddTeamMemberModalPr
                 return (
                   <Pressable
                     key={d.id}
-                    onPress={() => toggleDay(d.id)}
+                    onPress={() => { toggleDay(d.id); }}
                     style={[a.dayPill, isActive && a.dayPillActive]}
                   >
                     <UiText style={[a.dayPillTxt, isActive && a.dayPillTxtActive]}>
@@ -497,7 +497,7 @@ export function AddTeamMemberModal({ visible, onClose, t }: AddTeamMemberModalPr
               return (
                 <Pressable
                   key={lvl.id}
-                  onPress={() => setAccessLevel(lvl.id)}
+                  onPress={() => { setAccessLevel(lvl.id); }}
                   style={[a.accessCard, isActive && a.accessCardActive]}
                 >
                   <View style={a.accessCardHeader}>

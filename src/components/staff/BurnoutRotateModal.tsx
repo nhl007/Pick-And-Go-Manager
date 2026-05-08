@@ -128,7 +128,7 @@ export function BurnoutRotateModal({
               <Pressable
                 key={option.id}
                 style={[s.durationOption, isSelected && s.durationOptionActive]}
-                onPress={() => setSelectedDuration(option.id)}
+                onPress={() => { setSelectedDuration(option.id); }}
               >
                 <UiText style={[s.durationLabel, isSelected && s.durationLabelActive]}>
                   {t(option.labelKey)}

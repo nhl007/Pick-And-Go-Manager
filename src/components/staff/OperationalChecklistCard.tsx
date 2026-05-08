@@ -98,7 +98,7 @@ export function OperationalChecklistCard({ t }: OperationalChecklistCardProps) {
       {tasks.map((task) => (
         <Pressable
           key={task.id}
-          onPress={() => toggleTask(task.id)}
+          onPress={() => { toggleTask(task.id); }}
           hitSlop={4}
           style={[s.taskItem, task.done && s.taskItemDone]}
         >

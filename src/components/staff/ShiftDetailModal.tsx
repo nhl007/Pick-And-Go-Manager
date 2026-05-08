@@ -196,19 +196,19 @@ export function ShiftDetailModal({ visible, onClose, shiftKind, t }: ShiftDetail
         <View>
           <UiText style={s.sectionKicker}>{t("staff.shiftToolsLbl")}</UiText>
           <View style={s.toolsGrid}>
-            <Pressable style={s.toolBtn} onPress={() => setActiveTool("swap")}>
+            <Pressable style={s.toolBtn} onPress={() => { setActiveTool("swap"); }}>
               <Ionicons name="swap-horizontal-outline" size={16} color={COLORS.portalInk} />
               <UiText style={s.toolBtnTxt} font="extraBold">{t("staff.swapEmployee")}</UiText>
             </Pressable>
-            <Pressable style={s.toolBtn} onPress={() => setActiveTool("move")}>
+            <Pressable style={s.toolBtn} onPress={() => { setActiveTool("move"); }}>
               <Ionicons name="arrow-forward-outline" size={16} color={COLORS.portalInk} />
               <UiText style={s.toolBtnTxt} font="extraBold">{t("staff.moveToAnotherShift")}</UiText>
             </Pressable>
-            <Pressable style={s.toolBtn} onPress={() => setActiveTool("edit")}>
+            <Pressable style={s.toolBtn} onPress={() => { setActiveTool("edit"); }}>
               <Ionicons name="create-outline" size={16} color={COLORS.portalInk} />
               <UiText style={s.toolBtnTxt} font="extraBold">{t("staff.editShift")}</UiText>
             </Pressable>
-            <Pressable style={[s.toolBtn, s.toolBtnDanger]} onPress={() => setActiveTool("delete")}>
+            <Pressable style={[s.toolBtn, s.toolBtnDanger]} onPress={() => { setActiveTool("delete"); }}>
               <Ionicons name="trash-outline" size={16} color={COLORS.financeRose} />
               <UiText style={[s.toolBtnTxt, s.toolBtnTxtDanger]}>{t("staff.deleteShift")}</UiText>
             </Pressable>

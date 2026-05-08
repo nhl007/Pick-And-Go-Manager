@@ -29,7 +29,7 @@ export function OptInSuccessModal({
     <StaffBaseModal
       visible={visible}
       onClose={onClose}
-      showCloseIcon={true}
+      showCloseIcon
       scrollableBody={false}
       maxWidth={520}
       maxHeight={480}
