@@ -74,8 +74,8 @@ export default function StaffAndPrivilegesScreen() {
 
   const clockedInitials = ["RA", "AK", "LM", "OM"];
 
-  const openAllStaff = () => setAllStaffVisible(true);
-  const openTeamDirectory = () => setTeamDirectoryVisible(true);
+  const openAllStaff = () => { setAllStaffVisible(true); };
+  const openTeamDirectory = () => { setTeamDirectoryVisible(true); };
   const openAddMember = () => {
     setAllStaffVisible(false);
     setAddMemberVisible(true);
@@ -87,7 +87,7 @@ export default function StaffAndPrivilegesScreen() {
   };
   const handleDetailClose = () => {
     setMemberDetailVisible(false);
-    setTimeout(() => setSelectedMember(null), 250);
+    setTimeout(() => { setSelectedMember(null); }, 250);
   };
   const handleEditProfile = () => {
     setMemberDetailVisible(false);
@@ -95,7 +95,7 @@ export default function StaffAndPrivilegesScreen() {
   };
   const handleEditClose = () => {
     setEditProfileVisible(false);
-    setTimeout(() => setSelectedMember(null), 250);
+    setTimeout(() => { setSelectedMember(null); }, 250);
   };
 
   return (
@@ -419,13 +419,13 @@ export default function StaffAndPrivilegesScreen() {
 
       <AllStaffModal
         visible={allStaffVisible}
-        onClose={() => setAllStaffVisible(false)}
+        onClose={() => { setAllStaffVisible(false); }}
         onPressAddMember={openAddMember}
         t={t}
       />
       <AllTeamMembersModal
         visible={teamDirectoryVisible}
-        onClose={() => setTeamDirectoryVisible(false)}
+        onClose={() => { setTeamDirectoryVisible(false); }}
         onPressMember={handleMemberPress}
         t={t}
       />
@@ -444,7 +444,7 @@ export default function StaffAndPrivilegesScreen() {
       />
       <AddTeamMemberModal
         visible={addMemberVisible}
-        onClose={() => setAddMemberVisible(false)}
+        onClose={() => { setAddMemberVisible(false); }}
         t={t}
       />
     </>

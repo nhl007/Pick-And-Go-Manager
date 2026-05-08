@@ -9,14 +9,10 @@ import {
   TierDiamondBenefitsModal,
   TierKpiCard,
   TierMiniCard,
-  TierPeerBenchmarkCard,
   TierPreviewSelector,
-  TierPrivilegesTable,
   TierProgressCard,
-  TierProtectionAlertCard,
   TIERS,
   TierStatusCard,
-  TierUnlocksCard,
 } from "@/components/tier";
 import { UiText } from "@/components/ui/UiText";
 import { COLORS, SPACING } from "@/constants/styles";
@@ -173,7 +169,7 @@ export default function TierAndQualityScreen() {
             tier={tier}
             state={miniState(tier)}
             isPreviewActive={tier === previewTier}
-            onPress={() => setPreviewTier(tier)}
+            onPress={() => { setPreviewTier(tier); }}
             t={t}
           />
         ))}
@@ -280,7 +276,7 @@ export default function TierAndQualityScreen() {
 
       <TierDiamondBenefitsModal
         visible={diamondBenefitsOpen}
-        onClose={() => setDiamondBenefitsOpen(false)}
+        onClose={() => { setDiamondBenefitsOpen(false); }}
         t={t}
       />
     </ScrollView>
