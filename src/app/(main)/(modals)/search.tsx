@@ -436,7 +436,6 @@ export default function SearchScreen() {
         pointerEvents="box-none"
         style={styles.centering}
       >
-        {/* Narrow wrapper only — a full-width inner Pressable was eating “gutter” taps beside the card */}
         <View style={[styles.modalOuter, { width: modalWidth }]}>
           <View style={[styles.modal, { width: modalWidth, height: modalMaxHeight }]}>
             <View style={styles.searchBox}>
