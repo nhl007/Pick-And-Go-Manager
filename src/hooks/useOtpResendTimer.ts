@@ -13,7 +13,7 @@ export function useOtpResendTimer(initialSeconds = 60) {
       setSecondsLeft((s) => (s <= 1 ? 0 : s - 1));
     }, 1000);
 
-    return () => clearInterval(id);
+    return () => { clearInterval(id); };
   }, [isRunning]);
 
   const restart = useCallback(() => {
