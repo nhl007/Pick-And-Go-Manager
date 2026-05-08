@@ -15,11 +15,11 @@ type HeroProps = {
   titleStrong: string;
   subtitle: string;
   locale: "ar-AE" | "en-GB";
-  /** Renders above the meta row (e.g. Settings hero avatar). */
+  /** Renders above the meta row */
   aboveMeta?: React.ReactNode;
-  /** Renders between the meta row and the divider (e.g. Media Hub `display-sub`). */
+  /** Renders between the meta row and the divider */
   belowMeta?: React.ReactNode;
-  /** Renders at the end of the page heading row (e.g. Settings language pill). */
+  /** Renders at the end of the page heading row */
   pgHeadAccessory?: React.ReactNode;
 };
 
