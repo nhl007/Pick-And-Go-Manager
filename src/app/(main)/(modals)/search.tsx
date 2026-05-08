@@ -1,4 +1,3 @@
-import { BlurView } from "expo-blur";
 import { router } from "expo-router";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -16,7 +15,6 @@ import Svg, { Circle, Line } from "react-native-svg";
 
 import { COLORS, FONT_FAMILIES } from "@/constants/styles";
 import { useAppTranslation } from "@/hooks/useAppTranslation";
-import { useRequiredBlurTargetRef } from "@/hooks/useBlurTargetRef";
 
 type SearchItem = {
   id: string;
@@ -108,7 +106,7 @@ export default function SearchScreen() {
   const { t } = useAppTranslation();
   const inputRef = useRef<TextInput>(null);
   const { width: windowWidth, height: windowHeight } = useWindowDimensions();
-  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [activeRowId, setActiveRowId] = useState<string | null>(null);
 
   const close = useCallback(() => {
@@ -229,26 +227,144 @@ export default function SearchScreen() {
     ];
   }, [close]);
 
-  const normalizedQuery = query.trim().toLowerCase();
+  const mockSearchItems = useMemo<SearchItem[]>(() => {
+    return [
+      {
+        id: "mock-order-2910",
+        keywords:
+          "order 2910 om omar preparing rider delivery customer طلب عمر تحضير سائق",
+        icon: "📦",
+        titleKey: "searchModal.mockItems.order2910.title",
+        subtitleKey: "searchModal.mockItems.order2910.subtitle",
+        rightKey: "searchModal.mockItems.order2910.right",
+        onPress: () => {
+          close();
+          router.push("/(main)/(tabs)/intelligence");
+        },
+      },
+      {
+        id: "mock-shakshuka",
+        keywords: "shakshuka breakfast bowl menu egg tomato brunch vegan قائمة فطور بيض",
+        icon: "🥘",
+        titleKey: "searchModal.mockItems.shakshuka.title",
+        subtitleKey: "searchModal.mockItems.shakshuka.subtitle",
+        rightKey: "searchModal.mockItems.shakshuka.right",
+        onPress: () => {
+          close();
+          router.push("/(main)/(tabs)/intelligence");
+        },
+      },
+      {
+        id: "mock-customer-layan",
+        keywords:
+          "layan mansoori customer gold tier loyalty profile ليان منصوري عميل ذهبي",
+        icon: "👤",
+        titleKey: "searchModal.mockItems.customerLayan.title",
+        subtitleKey: "searchModal.mockItems.customerLayan.subtitle",
+        rightKey: "searchModal.mockItems.customerLayan.right",
+        onPress: () => {
+          close();
+          router.push("/(main)/(tabs)/concierge");
+        },
+      },
+      {
+        id: "mock-peak-insight",
+        keywords: "friday dinner peak insight growth analytics trend percent",
+        icon: "📈",
+        titleKey: "searchModal.mockItems.peakInsight.title",
+        subtitleKey: "searchModal.mockItems.peakInsight.subtitle",
+        rightKey: "searchModal.mockItems.peakInsight.right",
+        onPress: () => {
+          close();
+          router.push("/(main)/(tabs)/marketing-and-growth");
+        },
+      },
+      {
+        id: "mock-staff-roles",
+        keywords:
+          "staff roles privileges manager permissions branch access موظف صلاحيات مدير فرع",
+        icon: "🛡",
+        titleKey: "searchModal.mockItems.staffRoles.title",
+        subtitleKey: "searchModal.mockItems.staffRoles.subtitle",
+        rightKey: "searchModal.mockItems.staffRoles.right",
+        onPress: () => {
+          close();
+          router.push("/(main)/(tabs)/staff-and-privileges");
+        },
+      },
+      {
+        id: "mock-media-library",
+        keywords:
+          "media library spring campaign assets photos video upload وسائط مكتبة حملة ربيع",
+        icon: "🖼",
+        titleKey: "searchModal.mockItems.mediaLibrary.title",
+        subtitleKey: "searchModal.mockItems.mediaLibrary.subtitle",
+        rightKey: "searchModal.mockItems.mediaLibrary.right",
+        onPress: () => {
+          close();
+          router.push("/(main)/(tabs)/media");
+        },
+      },
+    ];
+  }, [close]);
 
-  const filteredSections = useMemo(() => {
-    if (!normalizedQuery) return sections;
+  const trimmedQuery = searchQuery.trim();
+  const normalizedQuery = trimmedQuery.toLowerCase();
+  const hasSearchQuery = trimmedQuery.length > 0;
 
-    return sections
+  const itemMatchesQuery = useCallback(
+    (item: SearchItem) => {
+      const haystack =
+        `${item.keywords} ${t(item.titleKey)} ${t(item.subtitleKey)} ${t(item.rightKey)}`.toLowerCase();
+      if (haystack.includes(normalizedQuery)) {
+        return true;
+      }
+      const tokens = normalizedQuery.split(/\s+/).filter((tok) => tok.length > 0);
+      if (tokens.length <= 1) {
+        return false;
+      }
+      return tokens.some((tok) => haystack.includes(tok));
+    },
+    [normalizedQuery, t],
+  );
+
+  // Empty query: full default catalog. Non-empty: mock "Results" + filtered catalog (with fallbacks).
+  const displayedSections = useMemo(() => {
+    if (!hasSearchQuery) {
+      return sections;
+    }
+
+    let filteredMocks = mockSearchItems.filter(itemMatchesQuery);
+    const filteredCatalog = sections
       .map((section) => ({
         ...section,
-        items: section.items.filter((item) =>
-          `${item.keywords} ${t(item.titleKey)} ${t(item.subtitleKey)}`
-            .toLowerCase()
-            .includes(normalizedQuery),
-        ),
+        items: section.items.filter(itemMatchesQuery),
       }))
       .filter((section) => section.items.length > 0);
-  }, [normalizedQuery, sections, t]);
+
+    const totalMatches =
+      filteredMocks.length + filteredCatalog.reduce((n, s) => n + s.items.length, 0);
+    if (totalMatches === 0) {
+      filteredMocks = [...mockSearchItems];
+    }
+
+    if (filteredMocks.length === 0) {
+      return filteredCatalog;
+    }
+
+    return [
+      {
+        id: "search-results",
+        labelKey: "searchModal.resultsLabel",
+        items: filteredMocks,
+      },
+      ...filteredCatalog,
+    ];
+  }, [hasSearchQuery, itemMatchesQuery, mockSearchItems, sections]);
 
   const allRowIds = useMemo(() => {
-    return filteredSections.flatMap((section) => section.items.map((it) => it.id));
-  }, [filteredSections]);
+    return displayedSections.flatMap((section) => section.items.map((it) => it.id));
+  }, [displayedSections]);
 
   useEffect(() => {
     const next = allRowIds[0] ?? null;
@@ -285,7 +401,7 @@ export default function SearchScreen() {
 
       if (e.key === "Enter") {
         if (!activeRowId) return;
-        const target = filteredSections
+        const target = displayedSections
           .flatMap((s) => s.items)
           .find((it) => it.id === activeRowId);
         target?.onPress?.();
@@ -296,43 +412,39 @@ export default function SearchScreen() {
     return () => {
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [activeRowId, allRowIds, close, filteredSections]);
+  }, [activeRowId, allRowIds, close, displayedSections]);
 
   const modalWidth = Math.min(540, windowWidth * 0.82);
   const modalMaxHeight = windowHeight * 0.78;
 
-  const blurTargetRef = useRequiredBlurTargetRef();
-
   return (
     <View style={styles.root}>
-      <View style={[StyleSheet.absoluteFill, styles.backdropTint]} />
-      <Pressable onPress={close} style={StyleSheet.absoluteFill}>
-        <BlurView
-          blurTarget={blurTargetRef}
-          style={StyleSheet.absoluteFill}
-          intensity={60}
-          tint="dark"
-          blurMethod="dimezisBlurViewSdk31Plus"
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={t("searchModal.closeBackdropHint")}
+        onPress={close}
+        style={[StyleSheet.absoluteFill, styles.backdropHitTarget]}
+      >
+        <View
+          style={[StyleSheet.absoluteFill, styles.backdropTint]}
+          pointerEvents="none"
         />
       </Pressable>
 
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
+        pointerEvents="box-none"
         style={styles.centering}
       >
-        <Pressable
-          onPress={(e) => {
-            e.stopPropagation();
-          }}
-          style={styles.innerPressable}
-        >
-          <View style={[styles.modal, { width: modalWidth, maxHeight: modalMaxHeight }]}>
+        {/* Narrow wrapper only — a full-width inner Pressable was eating “gutter” taps beside the card */}
+        <View style={[styles.modalOuter, { width: modalWidth }]}>
+          <View style={[styles.modal, { width: modalWidth, height: modalMaxHeight }]}>
             <View style={styles.searchBox}>
               <SearchIcon />
               <TextInput
                 ref={inputRef}
-                value={query}
-                onChangeText={setQuery}
+                value={searchQuery}
+                onChangeText={setSearchQuery}
                 placeholder={t("searchModal.placeholder")}
                 placeholderTextColor={COLORS.ink5}
                 autoCorrect={false}
@@ -348,7 +460,7 @@ export default function SearchScreen() {
               style={styles.searchResults}
               contentContainerStyle={styles.results}
             >
-              {filteredSections.map((section) => (
+              {displayedSections.map((section) => (
                 <View key={section.id}>
                   <Text style={styles.label}>{t(section.labelKey)}</Text>
                   {section.items.map((item) => {
@@ -405,7 +517,7 @@ export default function SearchScreen() {
               </View>
             </View>
           </View>
-        </Pressable>
+        </View>
       </KeyboardAvoidingView>
     </View>
   );
@@ -428,20 +540,25 @@ const styles = StyleSheet.create({
   backdropTint: {
     backgroundColor: "rgba(0,0,0,0.38)",
   },
+  backdropHitTarget: {
+    zIndex: 0,
+  },
   centering: {
     flex: 1,
+    zIndex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
     paddingTop: "9%",
   },
-  innerPressable: {
-    alignSelf: "stretch",
-    alignItems: "center",
+  modalOuter: {
+    alignSelf: "center",
+    maxWidth: "100%",
   },
   modal: {
     backgroundColor: COLORS.white,
     borderRadius: 18,
     overflow: "hidden",
+    flexDirection: "column",
     shadowColor: COLORS.black,
     shadowOffset: { width: 0, height: 30 },
     shadowOpacity: 0.35,
@@ -458,6 +575,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     borderBottomWidth: 1,
     borderBottomColor: COLORS.hairline,
+    flexShrink: 0,
   },
   input: {
     flex: 1,
@@ -557,6 +675,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     gap: 12,
+    flexShrink: 0,
   },
   footerLeft: {
     flexDirection: "row",
