@@ -230,11 +230,11 @@ function TopNavTabBarComponent({ state, descriptors, navigation }: BottomTabBarP
   }, [navigation, settingsRoute]);
 
   const openSearch = useCallback(() => {
-    router.push("/(main)/search");
+    router.push("/(main)/(modals)/search");
   }, []);
 
   const openNotifications = useCallback(() => {
-    router.push("/(main)/notification");
+    router.push("/(main)/(modals)/notifications");
   }, []);
 
   return (
