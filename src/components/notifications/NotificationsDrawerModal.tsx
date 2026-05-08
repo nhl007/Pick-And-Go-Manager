@@ -1,7 +1,6 @@
 import { router } from "expo-router";
 import React, { useCallback, useMemo, useState } from "react";
 import {
-  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -416,7 +415,6 @@ export function NotificationsDrawerModal() {
     <View style={styles.root}>
       <Pressable onPress={close} style={StyleSheet.absoluteFill} />
 
-      <View style={[StyleSheet.absoluteFill, styles.backdropBlur]} />
       <View style={[StyleSheet.absoluteFill, styles.backdropTint]} />
 
       <View style={styles.row}>
@@ -426,13 +424,7 @@ export function NotificationsDrawerModal() {
           <View style={styles.header}>
             <View>
               <Text style={styles.title}>{t("notificationsDrawer.title")}</Text>
-              <Text style={styles.sub}>
-                <Text style={styles.subStrong}>{unreadCount}</Text>
-                {` ${t("notificationsDrawer.filters.all").toLowerCase()}`}
-                {` · `}
-                <Text style={styles.subStrong}>{totalCount}</Text>
-                {` ${t("notificationsDrawer.filters.all").toLowerCase()}`}
-              </Text>
+
               <Text style={styles.sub}>
                 {t("notificationsDrawer.unreadAndTotal", {
                   unread: unreadCount,
@@ -614,15 +606,7 @@ export function NotificationsDrawerModal() {
 
 const styles = StyleSheet.create({
   root: { flex: 1 },
-  backdropBlur: {
-    ...(Platform.select({
-      web: {
-        backdropFilter: "blur(10px) saturate(140%)",
-        WebkitBackdropFilter: "blur(10px) saturate(140%)",
-      },
-      default: {},
-    }) as Record<string, unknown>),
-  },
+
   backdropTint: { backgroundColor: "rgba(0,0,0,0.38)" },
   row: { flex: 1, flexDirection: "row", justifyContent: "flex-end" },
   spacer: { flex: 1 },
@@ -638,7 +622,7 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   header: {
-    paddingTop: 18,
+    paddingTop: 32,
     paddingHorizontal: 20,
     paddingBottom: 14,
     backgroundColor: COLORS.white,
