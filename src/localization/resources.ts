@@ -226,6 +226,180 @@ export const resources = {
       settings: SETTINGS_EN,
       staff: staffTranslationsEn,
       tier: tierTranslationsEn,
+      searchModal: {
+        placeholder: "Search orders, menu items, customers, insights…",
+        esc: "ESC",
+        quickActions: "Quick actions",
+        recentSearches: "Recent searches",
+        jumpToSection: "Jump to section",
+        items: {
+          logWaste: {
+            title: "Log a Waste Item",
+            subtitle: "Record damaged or expired food",
+            right: "Live ›",
+          },
+          requestPayout: {
+            title: "Request a Payout",
+            subtitle: "Balance: AED 47,283 · Next in 5 days",
+            right: "Finance ›",
+          },
+          messageSarah: {
+            title: "Message Sarah Ahmed",
+            subtitle: "Online · Usually responds in 8 min",
+            right: "Concierge ›",
+          },
+          recentOrder4826: {
+            title: "Order #4826",
+            subtitle: "Khalid M. · Handed over",
+            right: "2h ago",
+          },
+          recentFattoush: {
+            title: "Fattoush Salad Deluxe",
+            subtitle: "Menu item · 186 orders this week",
+            right: "Yesterday",
+          },
+          recentVegan: {
+            title: "Vegan menu expansion",
+            subtitle: "Growth insight by Sarah Ahmed",
+            right: "3 days ago",
+          },
+          jumpLive: {
+            title: "Live intelligence",
+            subtitle: "Real-time operations & cash flow",
+            right: "⌘1",
+          },
+          jumpFinance: {
+            title: "Finance & Payouts",
+            subtitle: "Next payout · 5 days · AED 12,840",
+            right: "⌘4",
+          },
+        },
+        footer: {
+          navigate: " navigate",
+          select: " select",
+          close: " close",
+          openAnywherePrefix: "Open anywhere with ",
+        },
+      },
+      notificationsDrawer: {
+        title: "Notifications",
+        unreadAndTotal: "{{unread}} unread · {{total}} total",
+        markAllRead: "Mark all read",
+        close: "Close",
+        filters: {
+          all: "All",
+          urgent: "Urgent",
+          admin: "Admin",
+          system: "System",
+          platform: "Platform",
+          finance: "Financial",
+        },
+        groups: {
+          urgent: "Urgent · immediate attention",
+          admin: "Administrative · internal restaurant",
+          system: "System · alerts from PICK&GO platform",
+          platform: "Platform Management · PICK&GO team",
+          finance: "Financial · payouts & invoices",
+        },
+        unreadCount: "{{count}} unread",
+        footerHint: "Showing last 30 days · older notifications auto-archived",
+        viewArchived: "View archived →",
+        items: {
+          urgentConnectionLostTitle: "iPad #03 · Coffee Bar lost connection",
+          urgentConnectionLostSub:
+            "Device offline for 5 minutes. Layla cannot access live orders.",
+          urgentConnectionLostMetaLeft: "5 min ago",
+          urgentConnectionLostMetaRight: "critical",
+
+          urgentLateShiftTitle: "Sara Fahmy is 25 min late for shift",
+          urgentLateShiftSub:
+            "First-time attendance warning triggered. No call received yet.",
+          urgentLateShiftMetaLeft: "12 min ago",
+          urgentLateShiftMetaRight: "HR alert",
+
+          adminCleanlinessTitle: "Rami A. signed off grill cleanliness report",
+          adminCleanlinessSub:
+            "Daily station check complete · Grill station marked clean.",
+          adminCleanlinessMetaLeft: "today 14:02",
+          adminCleanlinessMetaRight: "Kitchen",
+
+          adminHandoverTitle: "Yousef K. acknowledged shift handover",
+          adminHandoverSub:
+            "Night shift 22:00-02:00 started. All checklist items verified.",
+          adminHandoverMetaLeft: "6 hours ago",
+          adminHandoverMetaRight: "Handover",
+
+          adminScheduleUpdatedTitle: "Staff schedule updated for next week",
+          adminScheduleUpdatedSub: "14 shifts assigned · 2 days need coverage",
+          adminScheduleUpdatedMetaLeft: "yesterday",
+          adminScheduleUpdatedMetaRight: "Scheduling",
+
+          adminReviewScheduledTitle: "Weekly staff review scheduled for Sunday",
+          adminReviewScheduledSub: "Team performance review · 10:00 at the office",
+          adminReviewScheduledMetaLeft: "2 days ago",
+          adminReviewScheduledMetaRight: "Reminder",
+
+          systemTierAlertTitle: "Tier Protection Alert · Gold status at risk",
+          systemTierAlertSub:
+            "Prep Time Accuracy dropped 0.8% this week. Action needed within 18 days.",
+          systemTierAlertMetaLeft: "1 hour ago",
+          systemTierAlertMetaRight: "Tier",
+
+          systemDispatchAssignedTitle: "Auto-dispatch assigned Khalid to Order #2847",
+          systemDispatchAssignedSub: "Customer ETA 2 min · Runner at door",
+          systemDispatchAssignedMetaLeft: "3 min ago",
+          systemDispatchAssignedMetaRight: "Dispatch",
+
+          systemDailyReportReadyTitle: "Daily sales report ready to export",
+          systemDailyReportReadySub: "April 20 report · 247 orders · Dh 11,240 revenue",
+          systemDailyReportReadyMetaLeft: "30 min ago",
+          systemDailyReportReadyMetaRight: "Report",
+
+          systemLiveFeedUpdatedTitle: "Live feed updated successfully",
+          systemLiveFeedUpdatedSub: "Menu prices and availability synced with all clients",
+          systemLiveFeedUpdatedMetaLeft: "today 08:00",
+          systemLiveFeedUpdatedMetaRight: "Sync",
+
+          systemAnalyticsRefreshedTitle: "Weekly analytics refreshed",
+          systemAnalyticsRefreshedSub: "All dashboards now reflect last 7-day data",
+          systemAnalyticsRefreshedMetaLeft: "yesterday",
+          systemAnalyticsRefreshedMetaRight: "Analytics",
+
+          platformFestivalApprovedTitle: "Dubai Food Festival application approved!",
+          platformFestivalApprovedSub:
+            "Your booth #D-48 at Bluewaters is confirmed for Feb 14-28, 2027.",
+          platformFestivalApprovedMetaLeft: "2 hours ago",
+          platformFestivalApprovedMetaRight: "Approval",
+
+          platformSarahRepliedTitle: "Sarah Ahmed replied to your query",
+          platformSarahRepliedSub:
+            "“About Coffee World Pass commission — I’ll send the updated terms now...”",
+          platformSarahRepliedMetaLeft: "3 hours ago",
+          platformSarahRepliedMetaRight: "Account Manager",
+
+          platformEidTermsUpdatedTitle: "Eid Campaign terms updated",
+          platformEidTermsUpdatedSub:
+            "New benefits added · Platform marketing budget increased by 40%",
+          platformEidTermsUpdatedMetaLeft: "2 days ago",
+          platformEidTermsUpdatedMetaRight: "Policy",
+
+          financeWeeklyPayoutTitle: "Weekly payout of Dh 24,580 initiated",
+          financeWeeklyPayoutSub:
+            "Bank transfer scheduled · expected in your account within 24h",
+          financeWeeklyPayoutMetaLeft: "5 hours ago",
+          financeWeeklyPayoutMetaRight: "Payout",
+
+          financeInvoiceAvailableTitle: "New invoice available for download",
+          financeInvoiceAvailableSub: "Invoice #APR-2026-0412 · Dh 3,420 platform fees",
+          financeInvoiceAvailableMetaLeft: "yesterday",
+          financeInvoiceAvailableMetaRight: "Invoice",
+
+          financeCommissionAddedTitle: "Corporate Breakfast subscription commission added",
+          financeCommissionAddedSub: "+Dh 420 from 3 new offices this week",
+          financeCommissionAddedMetaLeft: "2 days ago",
+          financeCommissionAddedMetaRight: "Commission",
+        },
+      },
     },
   },
   ar: {
@@ -429,6 +603,171 @@ export const resources = {
       settings: SETTINGS_AR,
       staff: staffTranslationsAr,
       tier: tierTranslationsAr,
+      searchModal: {
+        placeholder: "ابحث عن الطلبات، عناصر القائمة، العملاء، الرؤى…",
+        esc: "ESC",
+        quickActions: "إجراءات سريعة",
+        recentSearches: "عمليات بحث حديثة",
+        jumpToSection: "انتقل إلى قسم",
+        items: {
+          logWaste: {
+            title: "تسجيل عنصر هدر",
+            subtitle: "سجّل الطعام التالف أو منتهي الصلاحية",
+            right: "مباشر ›",
+          },
+          requestPayout: {
+            title: "طلب دفعة",
+            subtitle: "الرصيد: 47,283 AED · التالي خلال 5 أيام",
+            right: "التمويل ›",
+          },
+          messageSarah: {
+            title: "مراسلة سارة أحمد",
+            subtitle: "متصلة · غالبًا ترد خلال 8 دقائق",
+            right: "الكونسيرج ›",
+          },
+          recentOrder4826: {
+            title: "طلب #4826",
+            subtitle: "خالد م. · تم التسليم",
+            right: "قبل ساعتين",
+          },
+          recentFattoush: {
+            title: "فتوش ديلوكس",
+            subtitle: "عنصر قائمة · 186 طلبًا هذا الأسبوع",
+            right: "أمس",
+          },
+          recentVegan: {
+            title: "توسعة قائمة نباتية",
+            subtitle: "رؤية نمو من سارة أحمد",
+            right: "قبل 3 أيام",
+          },
+          jumpLive: {
+            title: "الذكاء المباشر",
+            subtitle: "عمليات لحظية وتدفق نقدي",
+            right: "⌘1",
+          },
+          jumpFinance: {
+            title: "التمويل والدفعات",
+            subtitle: "الدفعة التالية · 5 أيام · 12,840 AED",
+            right: "⌘4",
+          },
+        },
+        footer: {
+          navigate: " للتنقل",
+          select: " للاختيار",
+          close: " للإغلاق",
+          openAnywherePrefix: "افتح من أي مكان باستخدام ",
+        },
+      },
+      notificationsDrawer: {
+        title: "الإشعارات",
+        unreadAndTotal: "{{unread}} غير مقروء · {{total}} الإجمالي",
+        markAllRead: "تحديد الكل كمقروء",
+        close: "إغلاق",
+        filters: {
+          all: "الكل",
+          urgent: "عاجل",
+          admin: "إداري",
+          system: "النظام",
+          platform: "المنصة",
+          finance: "مالي",
+        },
+        groups: {
+          urgent: "عاجل · يحتاج اهتمامًا فوريًا",
+          admin: "إداري · داخلي للمطعم",
+          system: "النظام · تنبيهات من منصة PICK&GO",
+          platform: "إدارة المنصة · فريق PICK&GO",
+          finance: "مالي · الدفعات والفواتير",
+        },
+        unreadCount: "{{count}} غير مقروء",
+        footerHint: "عرض آخر 30 يومًا · يتم أرشفة الأقدم تلقائيًا",
+        viewArchived: "عرض الأرشيف →",
+        items: {
+          urgentConnectionLostTitle: "آيباد #03 · فقد اتصال ركن القهوة",
+          urgentConnectionLostSub: "الجهاز غير متصل منذ 5 دقائق. لا يمكن لليلى الوصول للطلبات.",
+          urgentConnectionLostMetaLeft: "قبل 5 دقائق",
+          urgentConnectionLostMetaRight: "حرِج",
+
+          urgentLateShiftTitle: "سارة فهمي متأخرة 25 دقيقة عن المناوبة",
+          urgentLateShiftSub: "تم تفعيل إنذار حضور أول مرة. لم يتم تلقي اتصال بعد.",
+          urgentLateShiftMetaLeft: "قبل 12 دقيقة",
+          urgentLateShiftMetaRight: "تنبيه موارد بشرية",
+
+          adminCleanlinessTitle: "رامي أ. وقّع تقرير نظافة محطة الشواية",
+          adminCleanlinessSub: "تمت مراجعة المحطة اليومية · الشواية مُعلّمة كنظيفة.",
+          adminCleanlinessMetaLeft: "اليوم 14:02",
+          adminCleanlinessMetaRight: "المطبخ",
+
+          adminHandoverTitle: "يوسف ك. أكد تسليم المناوبة",
+          adminHandoverSub: "بدأت مناوبة الليل 22:00-02:00. تم التحقق من القائمة.",
+          adminHandoverMetaLeft: "قبل 6 ساعات",
+          adminHandoverMetaRight: "تسليم",
+
+          adminScheduleUpdatedTitle: "تم تحديث جدول الموظفين للأسبوع القادم",
+          adminScheduleUpdatedSub: "تم تعيين 14 مناوبة · يومان بحاجة لتغطية",
+          adminScheduleUpdatedMetaLeft: "أمس",
+          adminScheduleUpdatedMetaRight: "الجدولة",
+
+          adminReviewScheduledTitle: "تم جدولة مراجعة أسبوعية للموظفين يوم الأحد",
+          adminReviewScheduledSub: "مراجعة الأداء · 10:00 في المكتب",
+          adminReviewScheduledMetaLeft: "قبل يومين",
+          adminReviewScheduledMetaRight: "تذكير",
+
+          systemTierAlertTitle: "تنبيه حماية المستوى · حالة الذهب في خطر",
+          systemTierAlertSub: "انخفضت دقة وقت التحضير 0.8% هذا الأسبوع. إجراء خلال 18 يومًا.",
+          systemTierAlertMetaLeft: "قبل ساعة",
+          systemTierAlertMetaRight: "المستوى",
+
+          systemDispatchAssignedTitle: "الإرسال التلقائي عيّن خالد للطلب #2847",
+          systemDispatchAssignedSub: "وصول العميل خلال دقيقتين · العامل عند الباب",
+          systemDispatchAssignedMetaLeft: "قبل 3 دقائق",
+          systemDispatchAssignedMetaRight: "الإرسال",
+
+          systemDailyReportReadyTitle: "تقرير المبيعات اليومي جاهز للتصدير",
+          systemDailyReportReadySub: "تقرير 20 أبريل · 247 طلبًا · Dh 11,240 إيراد",
+          systemDailyReportReadyMetaLeft: "قبل 30 دقيقة",
+          systemDailyReportReadyMetaRight: "تقرير",
+
+          systemLiveFeedUpdatedTitle: "تم تحديث البث المباشر بنجاح",
+          systemLiveFeedUpdatedSub: "تمت مزامنة الأسعار والتوفر مع جميع العملاء",
+          systemLiveFeedUpdatedMetaLeft: "اليوم 08:00",
+          systemLiveFeedUpdatedMetaRight: "مزامنة",
+
+          systemAnalyticsRefreshedTitle: "تم تحديث التحليلات الأسبوعية",
+          systemAnalyticsRefreshedSub: "تعكس اللوحات الآن بيانات آخر 7 أيام",
+          systemAnalyticsRefreshedMetaLeft: "أمس",
+          systemAnalyticsRefreshedMetaRight: "تحليلات",
+
+          platformFestivalApprovedTitle: "تمت الموافقة على طلب مهرجان الطعام في دبي!",
+          platformFestivalApprovedSub: "تم تأكيد جناحك #D-48 في بلوواترز من 14-28 فبراير 2027.",
+          platformFestivalApprovedMetaLeft: "قبل ساعتين",
+          platformFestivalApprovedMetaRight: "موافقة",
+
+          platformSarahRepliedTitle: "سارة أحمد ردّت على استفسارك",
+          platformSarahRepliedSub: "“بخصوص عمولة Coffee World Pass — سأرسل الشروط المحدثة الآن...”",
+          platformSarahRepliedMetaLeft: "قبل 3 ساعات",
+          platformSarahRepliedMetaRight: "مدير الحساب",
+
+          platformEidTermsUpdatedTitle: "تم تحديث شروط حملة العيد",
+          platformEidTermsUpdatedSub: "تمت إضافة مزايا جديدة · زيادة ميزانية التسويق 40%",
+          platformEidTermsUpdatedMetaLeft: "قبل يومين",
+          platformEidTermsUpdatedMetaRight: "سياسة",
+
+          financeWeeklyPayoutTitle: "تم بدء دفعة أسبوعية بقيمة Dh 24,580",
+          financeWeeklyPayoutSub: "تمت جدولة التحويل البنكي · متوقع خلال 24 ساعة",
+          financeWeeklyPayoutMetaLeft: "قبل 5 ساعات",
+          financeWeeklyPayoutMetaRight: "دفعة",
+
+          financeInvoiceAvailableTitle: "فاتورة جديدة متاحة للتنزيل",
+          financeInvoiceAvailableSub: "فاتورة #APR-2026-0412 · Dh 3,420 رسوم منصة",
+          financeInvoiceAvailableMetaLeft: "أمس",
+          financeInvoiceAvailableMetaRight: "فاتورة",
+
+          financeCommissionAddedTitle: "تمت إضافة عمولة اشتراك Corporate Breakfast",
+          financeCommissionAddedSub: "+Dh 420 من 3 مكاتب جديدة هذا الأسبوع",
+          financeCommissionAddedMetaLeft: "قبل يومين",
+          financeCommissionAddedMetaRight: "عمولة",
+        },
+      },
     },
   },
 };
