@@ -41,7 +41,7 @@ export function TierPreviewSelector({
         return (
           <Pressable
             key={tier}
-            onPress={() => onSelect(tier)}
+            onPress={() => { onSelect(tier); }}
             style={[
               styles.pill,
               isActive && [
