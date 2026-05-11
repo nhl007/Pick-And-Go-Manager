@@ -1,18 +1,15 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useCallback, useRef } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { UiText } from "@/components/ui/UiText";
 import { COLORS, RADIUS, SPACING } from "@/constants/styles";
-
-const DOUBLE_TAP_MS = 380;
 
 type ControlSmartSosCardProps = {
   title: string;
   description: string;
   sosLabel: string;
   sosSub: string;
-  onEmergencyActivate: () => void;
+  onOpenEmergencyShutdown: () => void;
 };
 
 export function ControlSmartSosCard({
@@ -20,20 +17,8 @@ export function ControlSmartSosCard({
   description,
   sosLabel,
   sosSub,
-  onEmergencyActivate,
+  onOpenEmergencyShutdown,
 }: ControlSmartSosCardProps) {
-  const lastTapRef = useRef<number>(0);
-
-  const handlePress = useCallback(() => {
-    const now = Date.now();
-    if (now - lastTapRef.current < DOUBLE_TAP_MS) {
-      onEmergencyActivate();
-      lastTapRef.current = 0;
-    } else {
-      lastTapRef.current = now;
-    }
-  }, [onEmergencyActivate]);
-
   return (
     <>
       <View style={styles.smartHead}>
@@ -46,7 +31,7 @@ export function ControlSmartSosCard({
       <Pressable
         accessibilityRole="button"
         accessibilityHint={sosSub}
-        onPress={handlePress}
+        onPress={onOpenEmergencyShutdown}
         style={({ pressed }) => [styles.sosButton, pressed && styles.sosButtonPressed]}
       >
         <View style={styles.sosRing} />

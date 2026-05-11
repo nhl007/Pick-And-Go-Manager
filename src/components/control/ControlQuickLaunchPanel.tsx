@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Pressable, StyleSheet, View } from "react-native";
 
+import type { PhotoUploadResult } from "@/components/media/PhotoUploadModal";
 import { UiButton } from "@/components/ui/UiButton";
 import { UiDirhamSymbol } from "@/components/ui/UiDirhamSymbol";
 import { UiInput } from "@/components/ui/UiInput";
@@ -36,6 +37,7 @@ type ControlQuickLaunchPanelProps = {
   launchLabel: string;
   onLaunch: () => void;
   onPickPhoto: () => void;
+  onPhotoUse?: (result: PhotoUploadResult) => void;
 };
 
 export function ControlQuickLaunchPanel({

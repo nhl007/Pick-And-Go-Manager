@@ -17,6 +17,8 @@ type VizDef = {
 type ControlStorefrontVisibilityPanelProps = {
   value: StorefrontViz;
   onChange: (v: StorefrontViz) => void;
+  /** When set, selecting a different option invokes this instead of applying immediately. */
+  onChangeRequest?: (next: StorefrontViz) => void;
   panelTitle: string;
   items: VizDef[];
   footer: string;
@@ -25,6 +27,7 @@ type ControlStorefrontVisibilityPanelProps = {
 export function ControlStorefrontVisibilityPanel({
   value,
   onChange,
+  onChangeRequest,
   panelTitle,
   items,
   footer,
@@ -41,7 +44,12 @@ export function ControlStorefrontVisibilityPanel({
               accessibilityRole="button"
               accessibilityState={{ selected: active }}
               onPress={() => {
-                onChange(item.key);
+                if (item.key === value) return;
+                if (onChangeRequest) {
+                  onChangeRequest(item.key);
+                } else {
+                  onChange(item.key);
+                }
               }}
               style={[styles.vizState, active && styles.vizStateActive]}
             >
