@@ -37,7 +37,15 @@
           }
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Pick & Go to access your photos to upload images for your storefront.",
+          "cameraPermission": "Allow Pick & Go to access your camera to capture photos."
+        }
+      ],
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true,
