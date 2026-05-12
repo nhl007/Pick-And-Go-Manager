@@ -212,10 +212,14 @@ export const settingsStyles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.25)",
     backgroundColor: "rgba(0,0,0,0.2)",
   },
-  qrImage: {
+  qrSvgHost: {
     width: 110,
     height: 110,
-    resizeMode: "cover",
+    borderRadius: RADIUS.sm,
+    backgroundColor: COLORS.white,
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
   },
   mergedActions: {
     gap: SPACING.xs,

@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { TFunction } from "i18next";
 import { Image, Pressable, View } from "react-native";
+import QRCode from "react-native-qrcode-svg";
 
 import { UiText } from "@/components/ui/UiText";
 import { settingsStyles } from "@/constants/settings.styles";
@@ -37,7 +38,7 @@ export function SettingsMergedIdentity({
         <View style={[settingsStyles.mergedLeft, isRtl && settingsStyles.rowRtl]}>
           <View style={settingsStyles.mergedAvatarCol}>
             <View style={settingsStyles.mergedAvRing}>
-              {/* <UiText style={settingsStyles.mergedAvPhoto}>JM</UiText> */}
+             
               <Image
                 source={require("@/assets/images/user.png")}
                 resizeMode="cover"
@@ -76,14 +77,19 @@ export function SettingsMergedIdentity({
           </View>
         </View>
 
-        {/* <View style={settingsStyles.qrWrap}>
-         
-        </View> */}
-        <Image
-          source={require("@/assets/images/qr.png")}
-          resizeMode="stretch"
-          style={settingsStyles.qrImage}
-        />
+      
+        <View
+          style={settingsStyles.qrSvgHost}
+          accessibilityRole="image"
+          accessibilityLabel={t("settings.mergedIdentityQrA11y")}
+        >
+          <QRCode
+            value={t("settings.mergedIdentityQrUrl")}
+            size={100}
+            backgroundColor={COLORS.white}
+            color={COLORS.portalInk}
+          />
+        </View>
 
         <View style={[settingsStyles.mergedActions, isRtl && settingsStyles.rowRtl]}>
           <Pressable
